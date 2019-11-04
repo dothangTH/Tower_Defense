@@ -15,6 +15,7 @@ public class normalTower extends Tower {
         this.damage = _baseDamage;
         this.range = _range;
         this.reloadTime = _reloadTime;
-        this.type = type.NORMAL;
+        this.penetrable = false;
+        this.towerType = type.NORMAL;
     }
 }

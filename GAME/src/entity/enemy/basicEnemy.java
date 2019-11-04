@@ -12,6 +12,6 @@ public class basicEnemy extends Enemy {
         this.speed = _speed;
         this.armor = _armor;
         this.reward = _reward;
-        this.type = type.BASIC;
+        this.enemyType = type.BASIC;
     }
 }

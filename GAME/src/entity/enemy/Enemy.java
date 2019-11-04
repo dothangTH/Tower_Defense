@@ -1,5 +1,8 @@
 package entity.enemy;
 
+import entity.tower.*;
+import game.Player;
+
 public class Enemy {
     public enum type{BASIC, SPEEDY, TANKER, ARMORED, BURSTER, BOSS}
 
@@ -7,9 +10,9 @@ public class Enemy {
     protected double hitPoint;
     protected double armor;
     public int reward;
-    protected type;
     protected int damage;
     protected int speed;
+    protected type enemyType;
 
     public Enemy(int _X, int _Y) {
         X = _X;
@@ -40,10 +43,14 @@ public class Enemy {
         return (hitPoint > 0);
     }
 
+    public void isAtDestination() {
+        Player.takeDamage(damage);
+    }
+
     public void takeDamage(Tower attackingTower) {
         if (attackingTower.canPenetrate())
-            return attackingTower.damage();
+            hitPoint -= attackingTower.getDamage();
         else
-            return attackingTower.damage() * (1 - armor * 1.0 / (armor + 10));
+            hitPoint -= attackingTower.getDamage() * (1 - armor * 1.0 / (armor + 10));
     }
 }
