@@ -60,28 +60,7 @@ public class Player {
     public boolean isDefeated() {
         return (hitPoint <= 0);
     }
-
-
-/*    public static void main(String[] args) {
-        Player test = new Player(1000, 100);
-        test.earn(500);
-        test.earn(400);
-        Scanner input = new Scanner(System.in);
-
-        while (test.getHitPoint() > 0){
-            String player_input = input.nextLine();
-            if (player_input.equals("hurt")){
-                takeDamage(5);
-                System.out.println("Hitpoint cua em la: " + test.getHitPoint());
-            }
-            else{
-                System.out.println("Nhap lai cai gi di anh ei!!!");
-            }
-        }
-
-        System.out.println("Done!");
-
-    }*/
+    
     public void buyTower() {}
 
 }
