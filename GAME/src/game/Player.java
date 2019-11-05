@@ -3,15 +3,23 @@ package game;
 import entity.enemy.Enemy;
 import entity.tower.Tower;
 
+
 import java.util.ArrayList;
 import java.util.Scanner;
+
+
 import java.util.Stack;
 
 public class Player {
     private static int wallet;
     private static int hitPoint;
+
     Stack<Enemy> enemyList;
     ArrayList<Tower> towerList;
+
+    Stack<Enemy> enemyStack;
+    Stack<Tower> towerStack;
+
 
     public static int getWallet() {
         return wallet;
@@ -22,10 +30,19 @@ public class Player {
     }
 
     public Player(int _startingWallet, int _startingHitPoint) {
+
         enemyList = new Stack<Enemy>();
         towerList = new ArrayList<Tower>();
+
+        enemyStack = new Stack<>();
+        towerStack = new Stack<>();
+
         wallet = _startingWallet;
         hitPoint = _startingHitPoint;
+    }
+
+    public boolean spendable(int amount) {
+        return (amount <= wallet);
     }
 
     public void earn (int amount) {
@@ -43,6 +60,7 @@ public class Player {
     public boolean isDefeated() {
         return (hitPoint <= 0);
     }
+
 
 /*    public static void main(String[] args) {
         Player test = new Player(1000, 100);
@@ -64,4 +82,6 @@ public class Player {
         System.out.println("Done!");
 
     }*/
+    public void buyTower() {}
+
 }
