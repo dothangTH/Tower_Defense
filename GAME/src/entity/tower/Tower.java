@@ -1,8 +1,10 @@
 package entity.tower;
 
+import entity.Bullet;
 import entity.enemy.Enemy;
 import game.Player;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class Tower{
@@ -25,6 +27,7 @@ public class Tower{
     private int level;
     protected boolean penetrable;
     protected type towerType;
+    private List<Bullet> bulletList;
 
     private List<Enemy> targetedEnemy;
 
@@ -32,6 +35,7 @@ public class Tower{
         X = _X;
         Y = _Y;
         level = 1;
+        bulletList = new ArrayList<Bullet>();
     }
 
     public int getPrice() {return price;}

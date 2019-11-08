@@ -1,5 +1,6 @@
 package entity.enemy;
 
+import entity.Bullet;
 import entity.tower.*;
 import game.Player;
 
@@ -47,10 +48,10 @@ public class Enemy {
         Player.takeDamage(damage);
     }
 
-    public void takeDamage(Tower attackingTower) {
-        if (attackingTower.canPenetrate())
-            hitPoint -= attackingTower.getDamage();
+    public void takeDamage(Bullet incomingBullet) {
+        if (incomingBullet.tower.canPenetrate())
+            hitPoint -= incomingBullet.tower.getDamage();
         else
-            hitPoint -= attackingTower.getDamage() * (1 - armor * 1.0 / (armor + 10));
+            hitPoint -= incomingBullet.tower.getDamage() * (1 - armor * 1.0 / (armor + 10));
     }
 }
