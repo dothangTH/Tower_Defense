@@ -8,7 +8,7 @@ public class normalTower extends Tower {
     private static int      _upgradePrice   =       20;
     private static double   _baseDamage     =       15.0;
     private static double   _range          =       300;
-    private static double   _reloadTime     =       3;
+    private static double   _reloadTime     =       1;
     private static int      _refundValue    =       15;
     private static double   _bulletSpeed    =       10.0;
 

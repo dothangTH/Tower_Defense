@@ -2,8 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e12a9c76-a000-4daa-b98a-2ecf76859705" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/src/entity/tower/Tower.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/entity/tower/Tower.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/game/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/Player.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/GAME/entity/enemy/Enemy$type.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/GAME/entity/enemy/Enemy$type.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/GAME/entity/enemy/Enemy.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/GAME/entity/enemy/Enemy.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/GAME/entity/enemy/basicEnemy.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/GAME/entity/enemy/basicEnemy.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/GAME/entity/tower/Tower$type.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/GAME/entity/tower/Tower$type.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/GAME/entity/tower/Tower.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/GAME/entity/tower/Tower.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/GAME/entity/tower/normalTower.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/GAME/entity/tower/normalTower.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/GAME/game/Player.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/GAME/game/Player.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/entity/tower/normalTower.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/entity/tower/normalTower.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -127,7 +134,14 @@
       <option name="project" value="LOCAL" />
       <updated>1573544418230</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Modified Tower + Player">
+      <created>1573545465166</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1573545465166</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -147,6 +161,7 @@
     <MESSAGE value="Added &quot;game&quot; package and &quot;Player&quot; class." />
     <MESSAGE value="Added &quot;Bullet&quot; class and modified Enemy &amp; Tower class." />
     <MESSAGE value="Modified and added new 'Point' class." />
-    <option name="LAST_COMMIT_MESSAGE" value="Modified and added new 'Point' class." />
+    <MESSAGE value="Modified Tower + Player" />
+    <option name="LAST_COMMIT_MESSAGE" value="Modified Tower + Player" />
   </component>
 </project>
