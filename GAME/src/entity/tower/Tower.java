@@ -7,7 +7,7 @@ import game.Player;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Tower{
+abstract public class Tower{
     public enum type{NORMAL, SMG, ARTILLERY, ANTIARMORED, BLASTER}
     private final int maxLevel = 4;
     private final double powerMultiplyingRate = 1.2;
@@ -22,20 +22,27 @@ public class Tower{
     protected int refundValue;
     protected double range;
     protected double reloadTime;
-    private int X;
-    private int Y;
+    private double X;
+    private double Y;
     private int level;
+    protected double bulletSpeed;
     protected boolean penetrable;
     protected type towerType;
-    private List<Bullet> bulletList;
-
-    private List<Enemy> targetedEnemy;
+    protected List<Bullet> bulletList;
 
     public Tower(int _X, int _Y) {
         X = _X;
         Y = _Y;
         level = 1;
         bulletList = new ArrayList<Bullet>();
+    }
+
+    public double getX() {
+        return X;
+    }
+
+    public double getY() {
+        return Y;
     }
 
     public int getPrice() {return price;}
@@ -53,6 +60,10 @@ public class Tower{
     public double getRange() {return range;}
 
     public int getLevel() {return level;}
+
+    public double getBulletSpeed() {
+        return bulletSpeed;
+    }
 
     public int getRefundValue() {return refundValue;}
 
@@ -77,4 +88,6 @@ public class Tower{
             level++;
         }
     }
+
+    abstract public void attack();
 }

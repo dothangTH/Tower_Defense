@@ -2,9 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e12a9c76-a000-4daa-b98a-2ecf76859705" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/entity/Bullet.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/entity/map/Point.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/entity/Bullet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/entity/Bullet.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/entity/enemy/Enemy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/entity/enemy/Enemy.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/entity/enemy/basicEnemy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/entity/enemy/basicEnemy.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/entity/tower/Tower.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/entity/tower/Tower.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/entity/tower/normalTower.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/entity/tower/normalTower.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/game/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/Player.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/game/gameStage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/gameStage.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -32,6 +38,9 @@
   <component name="PropertiesComponent">
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="project.structure.last.edited" value="SDKs" />
+    <property name="project.structure.proportion" value="0.15" />
+    <property name="project.structure.side.proportion" value="0.2" />
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -45,7 +54,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Application.gameTest">
     <configuration name="Player" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="game.Player" />
       <module name="GAME" />
@@ -59,8 +68,22 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="gameTest" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="game.gameTest" />
+      <module name="GAME" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="game.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.gameTest" />
         <item itemvalue="Application.Player" />
       </list>
     </recent_temporary>
@@ -97,7 +120,14 @@
       <option name="project" value="LOCAL" />
       <updated>1572957970884</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Added &quot;Bullet&quot; class and modified Enemy &amp; Tower class.">
+      <created>1573248494535</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1573248494535</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -115,6 +145,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Added &quot;game&quot; package and &quot;Player&quot; class." />
-    <option name="LAST_COMMIT_MESSAGE" value="Added &quot;game&quot; package and &quot;Player&quot; class." />
+    <MESSAGE value="Added &quot;Bullet&quot; class and modified Enemy &amp; Tower class." />
+    <option name="LAST_COMMIT_MESSAGE" value="Added &quot;Bullet&quot; class and modified Enemy &amp; Tower class." />
   </component>
 </project>

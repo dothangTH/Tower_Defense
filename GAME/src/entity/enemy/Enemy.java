@@ -4,15 +4,17 @@ import entity.Bullet;
 import entity.tower.*;
 import game.Player;
 
-public class Enemy {
-    public enum type{BASIC, SPEEDY, TANKER, ARMORED, BURSTER, BOSS}
+import static java.lang.Math.sqrt;
 
-    private int X, Y;
+public class Enemy {
+    public enum type{BASIC, SPEEDY, TANKER, ARMORED, BUSTER, BOSS}
+
+    private double X, Y;
     protected double hitPoint;
     protected double armor;
     public int reward;
-    protected int damage;
-    protected int speed;
+    protected double damage;
+    protected double speed;
     protected type enemyType;
 
     public Enemy(int _X, int _Y) {
@@ -20,24 +22,29 @@ public class Enemy {
         Y = _Y;
     }
 
-    public int getX() {
+    public double getX() {
         return X;
     }
 
-    public int getY() {
+    public double getY() {
         return Y;
     }
 
-    public int getDamage() {
+    public double getDamage() {
         return damage;
     }
 
-    public int getSpeed() {
+    public double getSpeed() {
         return speed;
     }
 
     public int getReward() {
         return reward;
+    }
+
+    public double distanceToTower(Tower tower) {
+        double result = sqrt((X - tower.getX()) * (X - tower.getX()) + (Y - tower.getY()) * (Y- tower.getY()));
+        return result;
     }
 
     public boolean isAlive() {

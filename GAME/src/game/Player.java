@@ -12,31 +12,23 @@ import java.util.Stack;
 
 public class Player {
     private static int wallet;
-    private static int hitPoint;
+    private static double hitPoint;
 
-    Stack<Enemy> enemyList;
-    ArrayList<Tower> towerList;
-
-    Stack<Enemy> enemyStack;
-    Stack<Tower> towerStack;
-
+    public static ArrayList<Enemy> enemyList ;
+    public static ArrayList<Tower> towerList;
 
     public static int getWallet() {
         return wallet;
     }
 
-    public int getHitPoint() {
+    public double getHitPoint() {
         return hitPoint;
     }
 
-    public Player(int _startingWallet, int _startingHitPoint) {
+    public Player(int _startingWallet, double _startingHitPoint) {
 
-        enemyList = new Stack<Enemy>();
+        enemyList = new ArrayList<Enemy>();
         towerList = new ArrayList<Tower>();
-
-        enemyStack = new Stack<>();
-        towerStack = new Stack<>();
-
         wallet = _startingWallet;
         hitPoint = _startingHitPoint;
     }
@@ -53,7 +45,7 @@ public class Player {
         wallet -= amount;
     }
 
-    public static void takeDamage(int amount) {
+    public static void takeDamage(double amount) {
         hitPoint -= amount;
     }
 
