@@ -2,15 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e12a9c76-a000-4daa-b98a-2ecf76859705" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/entity/map/Point.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/entity/Bullet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/entity/Bullet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/entity/enemy/Enemy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/entity/enemy/Enemy.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/entity/enemy/basicEnemy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/entity/enemy/basicEnemy.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/entity/tower/Tower.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/entity/tower/Tower.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/entity/tower/normalTower.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/entity/tower/normalTower.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/game/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/Player.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/game/gameStage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/gameStage.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -127,7 +120,14 @@
       <option name="project" value="LOCAL" />
       <updated>1573248494535</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Modified and added new 'Point' class.">
+      <created>1573544418230</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1573544418230</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -146,6 +146,7 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Added &quot;game&quot; package and &quot;Player&quot; class." />
     <MESSAGE value="Added &quot;Bullet&quot; class and modified Enemy &amp; Tower class." />
-    <option name="LAST_COMMIT_MESSAGE" value="Added &quot;Bullet&quot; class and modified Enemy &amp; Tower class." />
+    <MESSAGE value="Modified and added new 'Point' class." />
+    <option name="LAST_COMMIT_MESSAGE" value="Modified and added new 'Point' class." />
   </component>
 </project>

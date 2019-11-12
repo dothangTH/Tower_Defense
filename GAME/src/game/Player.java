@@ -37,7 +37,7 @@ public class Player {
         return (amount <= wallet);
     }
 
-    public void earn (int amount) {
+    public static void earn (int amount) {
         wallet += amount;
     }
 

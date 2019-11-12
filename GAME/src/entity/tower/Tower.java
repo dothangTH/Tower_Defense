@@ -89,5 +89,14 @@ abstract public class Tower{
         }
     }
 
+    public void sell() {
+        for (int i = 0; i < Player.towerList.size(); i++)
+            if (Player.towerList.get(i).equals(this)) {
+                Player.earn(this.getRefundValue());
+                Player.towerList.remove(i);
+                return;
+            }
+    }
+
     abstract public void attack();
 }
