@@ -1,8 +1,12 @@
 package entity.enemy;
 
 import entity.Bullet;
+import entity.map.Point;
+import entity.map.map;
 import entity.tower.*;
 import game.Player;
+
+import java.util.ArrayList;
 
 import static java.lang.Math.sqrt;
 
@@ -60,5 +64,14 @@ public class Enemy {
             hitPoint -= incomingBullet.tower.getDamage();
         else
             hitPoint -= incomingBullet.tower.getDamage() * (1 - armor * 1.0 / (armor + 10));
+    }
+
+    public void singleMove(Point p1, Point p2, double step, double speed, map map){ }
+
+    public void move(Point start, Point end, double step, double speed, map map){
+        ArrayList<Point> road = map.findRoad(start, end);
+        for (int i = 0; i < road.size()-1; i++) {
+            this.singleMove(road.get(i), road.get(i+1), step, speed, map);
+        }
     }
 }
