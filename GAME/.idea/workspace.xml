@@ -5,12 +5,14 @@
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/GAME/entity/enemy/Enemy$type.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/GAME/entity/enemy/Enemy$type.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/GAME/entity/enemy/Enemy.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/GAME/entity/enemy/Enemy.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/GAME/entity/enemy/basicEnemy.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/GAME/entity/enemy/basicEnemy.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/GAME/entity/tower/Tower$type.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/GAME/entity/tower/Tower$type.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/GAME/entity/tower/Tower.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/GAME/entity/tower/Tower.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/GAME/entity/tower/normalTower.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/GAME/entity/tower/normalTower.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/GAME/game/Player.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/GAME/game/Player.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/entity/tower/normalTower.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/entity/tower/normalTower.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/entity/Entity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/entity/Entity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/entity/enemy/Enemy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/entity/enemy/Enemy.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/entity/enemy/basicEnemy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/entity/enemy/basicEnemy.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/entity/map/Point.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/entity/map/Point.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/entity/map/map.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/entity/map/map.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/entity/tower/Tower.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/entity/tower/Tower.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -32,6 +34,7 @@
       </list>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+    <option name="UPDATE_TYPE" value="MERGE" />
   </component>
   <component name="ProjectId" id="1T1Y54sgExXw3y3ZJbOfyIr7hyH" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -141,7 +144,14 @@
       <option name="project" value="LOCAL" />
       <updated>1573545465166</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="Modified">
+      <created>1573546951312</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1573546951312</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -162,6 +172,7 @@
     <MESSAGE value="Added &quot;Bullet&quot; class and modified Enemy &amp; Tower class." />
     <MESSAGE value="Modified and added new 'Point' class." />
     <MESSAGE value="Modified Tower + Player" />
-    <option name="LAST_COMMIT_MESSAGE" value="Modified Tower + Player" />
+    <MESSAGE value="Modified" />
+    <option name="LAST_COMMIT_MESSAGE" value="Modified" />
   </component>
 </project>

@@ -15,4 +15,8 @@ public class Point {
     public int getY() {
         return Y;
     }
+
+    public boolean equals(Point other) {
+        return ((this.X == other.getX()) && (this.Y == other.getY()));
+    }
 }

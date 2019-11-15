@@ -19,7 +19,7 @@ public class gameStage {
             System.out.println("You have " + player.getHitPoint() + " HP left.");
 
             if (inputString.equals("spawn")) {
-                player.enemyList.add(new basicEnemy(0,0));
+                //player.enemyList.add(new basicEnemy(0,0));
                 player.takeDamage(player.enemyList.get(0).getDamage());
                 //System.out.println("Spawn a basic enemy and it attacked your base, your HP decreased by " + player.enemyList.get().getDamage());
             }

@@ -7,7 +7,7 @@ import java.util.*;
 
 public class map {
     private int width, height;
-    public int pixelPerBox;
+    public  static int pixelPerBox;
     private String nameOfMap;
     private String mapPath;
     private int[][] mapArray;

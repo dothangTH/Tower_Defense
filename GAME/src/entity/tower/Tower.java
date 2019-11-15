@@ -97,6 +97,4 @@ abstract public class Tower{
                 return;
             }
     }
-
-    abstract public void attack();
 }

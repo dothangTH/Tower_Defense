@@ -1,8 +1,7 @@
 package entity.enemy;
 
 import entity.Bullet;
-import entity.map.Point;
-import entity.map.map;
+import entity.map.*;
 import entity.tower.*;
 import game.Player;
 
@@ -10,27 +9,33 @@ import java.util.ArrayList;
 
 import static java.lang.Math.sqrt;
 
-public class Enemy {
+abstract public class Enemy {
     public enum type{BASIC, SPEEDY, TANKER, ARMORED, BUSTER, BOSS}
 
-    private double X, Y;
+    private int X, Y;
+    private Point currentLocation;
+    private Point startingPoint, destination;
     protected double hitPoint;
     protected double armor;
     public int reward;
     protected double damage;
-    protected double speed;
+    protected int speed;
     protected type enemyType;
+    private ArrayList<Point> path;
 
-    public Enemy(int _X, int _Y) {
+    public Enemy(Point startingPoint, Point destination, int _X, int _Y) {
         X = _X;
         Y = _Y;
+        this.startingPoint = startingPoint;
+        currentLocation = startingPoint;
+        this.destination = destination;
     }
 
-    public double getX() {
+    public int getX() {
         return X;
     }
 
-    public double getY() {
+    public int getY() {
         return Y;
     }
 
@@ -38,7 +43,7 @@ public class Enemy {
         return damage;
     }
 
-    public double getSpeed() {
+    public int getSpeed() {
         return speed;
     }
 
@@ -55,8 +60,8 @@ public class Enemy {
         return (hitPoint > 0);
     }
 
-    public void isAtDestination() {
-        Player.takeDamage(damage);
+    public boolean isAtDestination() {
+        return (currentLocation.equals(destination));
     }
 
     public void takeDamage(Bullet incomingBullet) {
@@ -66,12 +71,28 @@ public class Enemy {
             hitPoint -= incomingBullet.tower.getDamage() * (1 - armor * 1.0 / (armor + 10));
     }
 
-    public void singleMove(Point p1, Point p2, double step, double speed, map map){ }
+    //public void singleMove(Point p1, Point p2, double step, double speed, map map){ }
 
-    public void move(Point start, Point end, double step, double speed, map map){
-        ArrayList<Point> road = map.findRoad(start, end);
-        for (int i = 0; i < road.size()-1; i++) {
-            this.singleMove(road.get(i), road.get(i+1), step, speed, map);
+    public void move(/*Point start, Point end, double step, double speed, map map*/){
+        Point nextStep = path.get(path.indexOf(currentLocation) + 1);
+        X += (nextStep.getX() - currentLocation.getX()) * speed;
+        Y += (nextStep.getY() - currentLocation.getY()) * speed;
+        boolean reachedNextStep = (((X / map.pixelPerBox) == nextStep.getX()) || ((Y / map.pixelPerBox) == nextStep.getY()));
+        if (reachedNextStep) currentLocation = nextStep;
+    }
+
+    public void updateStatus() {
+        if (!this.isAlive()) {
+            Player.enemyList.remove(this);
+            return;
         }
+
+        if (this.isAtDestination()) {
+            Player.takeDamage(this.getDamage());
+            Player.enemyList.remove(this);
+            return;
+        }
+
+        move();
     }
 }
