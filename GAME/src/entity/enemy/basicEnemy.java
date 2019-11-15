@@ -9,8 +9,8 @@ public class basicEnemy extends Enemy {
     private static double   _armor       =   2.5;
     private static double   _damage      =   5;
 
-    public basicEnemy(Point startingPointint, Point destination, int _X, int _Y) {
-        super(startingPointint, destination, _X, _Y);
+    public basicEnemy(Point startingPointint, Point destination) {
+        super(startingPointint, destination);
         this.hitPoint = _hitPoint;
         this.speed = _speed;
         this.armor = _armor;

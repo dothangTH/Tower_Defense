@@ -23,9 +23,9 @@ abstract public class Enemy {
     protected type enemyType;
     private ArrayList<Point> path;
 
-    public Enemy(Point startingPoint, Point destination, int _X, int _Y) {
-        X = _X;
-        Y = _Y;
+    public Enemy(Point startingPoint, Point destination) {
+        X = startingPoint.getX() * map.pixelPerBox / 2;
+        Y = startingPoint.getY() * map.pixelPerBox / 2;
         this.startingPoint = startingPoint;
         currentLocation = startingPoint;
         this.destination = destination;
