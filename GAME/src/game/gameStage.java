@@ -24,7 +24,8 @@ public class gameStage {
             inputString = input.next();
 
             if (inputString.equals("spawn")) {
-                player.enemyList.add(new basicEnemy(new Point(0,0), new Point(4,4)));
+                player.enemyList.add(0, new basicEnemy(new Point(0,0), new Point(4,4)));
+                System.out.println(Player.enemyList.size());
             }
 
             if (inputString.equals("buy")) {
@@ -66,12 +67,14 @@ public class gameStage {
             }
 
             if (inputString.equals("move")) {
-                for (int i = 0; i < Player.enemyList.size(); i++)
+                for (int i = Player.enemyList.size()-1; i >= 0; i--)
                     Player.enemyList.get(i).updateStatus();
             }
 
             if (inputString.equals("getlocation")) {
-                System.out.println(Player.enemyList.get(0).getCurrentLocation().getX() + " " + Player.enemyList.get(0).getCurrentLocation().getY());
+                for (int i = 0; i < Player.enemyList.size(); i++) {
+                    System.out.println(i + " " + Player.enemyList.get(i).getCurrentLocation().getX() + " " + Player.enemyList.get(i).getCurrentLocation().getY());
+                }
             }
 
             System.out.println("You have " + player.getHitPoint() + " HP left.");

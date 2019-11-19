@@ -3,13 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="e12a9c76-a000-4daa-b98a-2ecf76859705" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/GAME/entity/enemy/Enemy.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/GAME/entity/enemy/Enemy.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/GAME/entity/enemy/basicEnemy.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/GAME/entity/enemy/basicEnemy.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/entity/enemy/Enemy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/entity/enemy/Enemy.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/entity/enemy/basicEnemy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/entity/enemy/basicEnemy.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/entity/map/map.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/entity/map/map.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/game/gameStage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/gameStage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/game/gameTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/gameTest.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -162,7 +156,14 @@
       <option name="project" value="LOCAL" />
       <updated>1573835930522</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="Test moving method">
+      <created>1574149461221</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1574149461221</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -186,6 +187,18 @@
     <MESSAGE value="Modified" />
     <MESSAGE value="Added moving method for enemy." />
     <MESSAGE value="Enemy's constructor modified." />
-    <option name="LAST_COMMIT_MESSAGE" value="Enemy's constructor modified." />
+    <MESSAGE value="Test moving method" />
+    <option name="LAST_COMMIT_MESSAGE" value="Test moving method" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/game/gameTest.java</url>
+          <line>6</line>
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>
