@@ -7,15 +7,22 @@ import java.util.*;
 
 public class map {
     private int width, height;
-    public  static int pixelPerBox;
+    public  static int pixelPerBox = 1;
     private String nameOfMap;
     private String mapPath;
-    private int[][] mapArray;
+    private int[][] mapArray = {
+            {0, 3, 3, 3, 3, 3},
+            {0, 0, 3, 3, 3, 3},
+            {3, 0, 0, 3, 3, 3},
+            {3, 3, 0, 0, 3, 3},
+            {3, 0, 0, 0, 0, 3},
+            {3, 3, 3, 3, 3, 3}
+    };
     private Image[][] mapImage;
 
     public map(){
-        this.width = 5;
-        this.height = 5;
+        this.width = 6;
+        this.height = 6;
     }
 
     public void mapInitialize(String tileMapPath, ArrayList<Image> imageArrayList) throws FileNotFoundException {
@@ -59,10 +66,10 @@ public class map {
             Point p = wait.poll();
             int x = p.getX();
             int y = p.getY();
-            for (int i = 0; i < 3; i++) {
+            for (int i = 0; i < 4; i++) {
                 int u = x + DR[i];
                 int v = y + DC[i];
-                if (mapArray[u][v] == 0 && pass[u][v] != 1){
+                if (((u >=0 )&&(v>=0)) && (mapArray[u][v] == 0 && pass[u][v] != 1)){
                     trace[u][v] = new Point(x, y);
                     if (u == end.getX() && v == end.getY()) break;
                     pass[u][v] = 1;
@@ -75,8 +82,10 @@ public class map {
         int y = end.getY();
         while ((x != start.getX()) || (y != start.getY())){
             something.push(new Point(x, y));
-            x = trace[x][y].getX();
-            y = trace[x][y].getY();
+            int u = trace[x][y].getX();
+            int v = trace[x][y].getY();
+            x = u;
+            y = v;
         }
         something.push(new Point(x, y));
         while (!(something.empty())){

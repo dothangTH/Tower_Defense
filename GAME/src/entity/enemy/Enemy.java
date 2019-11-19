@@ -21,13 +21,14 @@ abstract public class Enemy {
     protected double damage;
     protected int speed;
     protected type enemyType;
-    private ArrayList<Point> path;
+    public static ArrayList<Point> path;
 
     public Enemy(Point startingPoint, Point destination) {
+        //path = findRoad(startingPoint,destination);
         X = startingPoint.getX() * map.pixelPerBox / 2;
         Y = startingPoint.getY() * map.pixelPerBox / 2;
         this.startingPoint = startingPoint;
-        currentLocation = startingPoint;
+        currentLocation = path.get(0);
         this.destination = destination;
     }
 
@@ -77,8 +78,12 @@ abstract public class Enemy {
         Point nextStep = path.get(path.indexOf(currentLocation) + 1);
         X += (nextStep.getX() - currentLocation.getX()) * speed;
         Y += (nextStep.getY() - currentLocation.getY()) * speed;
-        boolean reachedNextStep = (((X / map.pixelPerBox) == nextStep.getX()) || ((Y / map.pixelPerBox) == nextStep.getY()));
+        boolean reachedNextStep = (((X / map.pixelPerBox) == nextStep.getX()) && ((Y / map.pixelPerBox) == nextStep.getY()));
         if (reachedNextStep) currentLocation = nextStep;
+    }
+
+    public Point getCurrentLocation() {
+        return currentLocation;
     }
 
     public void updateStatus() {
@@ -87,12 +92,12 @@ abstract public class Enemy {
             return;
         }
 
+        move();
+
         if (this.isAtDestination()) {
             Player.takeDamage(this.getDamage());
             Player.enemyList.remove(this);
             return;
         }
-
-        move();
     }
 }
