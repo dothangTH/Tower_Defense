@@ -1,7 +1,6 @@
 package Tower;
 
-import Map.Map;
-import Map.Point;
+import Map.*;
 import javafx.scene.image.Image;
 
 import java.io.File;
@@ -12,6 +11,7 @@ public class NormalTower extends Tower{
     private NormalTower() {
         super();
         type = "Normal";
+        penetrating = false;
         image = new Image (new File("Data/Tower/Normal.png").toURI().toString());
         damage = 5;
         refundValue = 5;

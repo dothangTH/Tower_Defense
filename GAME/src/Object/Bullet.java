@@ -8,10 +8,12 @@ import javafx.scene.image.Image;
 import java.io.File;
 
 public class Bullet extends GameObject implements Cloneable {
+    private final int MAXIMUMDISTANCE = 500;
+
     private Enemy target;
     private int damage;
     private int speed;
-    private final int MAXIMUMDISTANCE = 500;
+    private boolean penetrating;
     private int traveledDistance;
     private static Bullet instance = null;
     private Image image;
@@ -26,6 +28,7 @@ public class Bullet extends GameObject implements Cloneable {
         target = null;
         type = null;
         image = null;
+        penetrating = false;
     }
 
     private static Bullet getInstance(){
@@ -38,6 +41,7 @@ public class Bullet extends GameObject implements Cloneable {
         Bullet bullet = (Bullet) getInstance().clone();
         bullet.setX(tower.getX());
         bullet.setY(tower.getY());
+        bullet.penetrating = tower.isPenetrating();
         bullet.setSpeed(tower.getSpeed());
         bullet.setDamage(tower.getDamage());
         bullet.setImage(new Image(new File("Data/Bullet/" + tower.getType() + ".png").toURI().toString()));
@@ -63,7 +67,12 @@ public class Bullet extends GameObject implements Cloneable {
     }
 
     public void dealDamage() {
-        target.takeDamage(getDamage());
+        int amount;
+        if (penetrating)
+            amount = getDamage();
+        else
+            amount = (int) (getDamage() * (1 - target.getArmor() * 1.0 / (target.getArmor() + 10)));
+        target.takeDamage(amount);
     }
 
     public int getDamage() {

@@ -75,6 +75,10 @@ public abstract class Enemy extends GameObject implements Cloneable, MovableObje
         Y = y;
     }
 
+    public int getArmor() {
+        return armor;
+    }
+
     public Point getCoordinate() {
         return coordinate;
     }

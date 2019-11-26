@@ -14,14 +14,22 @@ public abstract class Tower extends GameObject implements UpgradableObject, Clon
     private int X;
     private int Y;
     private int currentReloadTime;
+    private final double DMGRATE        =   1.2;
+    private final double RLDRATE        =   0.8;
+    private final double UPGRDRATE      =   1.5;
+    private final double RFNDRATE       =   1.4;
+    private final double RNGRATE        =   1.2;
+    private final int    MAXLVL         =   4;
 
     protected int damage;
+    protected boolean penetrating;
     protected int reloadTime;
     protected int refundValue;
     protected int upgradePrice;
     protected int price;
     protected int speed;
     protected int range;
+    protected int level;
     protected String type;
 
     protected Tower() {
@@ -29,15 +37,23 @@ public abstract class Tower extends GameObject implements UpgradableObject, Clon
         this.X = 0;
         this.Y = 0;
         this.currentReloadTime = 0;
+        this.level = 1;
     }
 
-    public static Tower getInstance() {
-        return null;
+    public boolean upgradable() {
+        return this.level < MAXLVL;
     }
 
     @Override
     public void upgrade() {
-
+        if (upgradable()) {
+            this.damage *= DMGRATE;
+            this.reloadTime *= RLDRATE;
+            this.refundValue *= RFNDRATE;
+            this.upgradePrice *= UPGRDRATE;
+            this.range *= RNGRATE;
+            this.level += 1;
+        }
     }
 
     public Enemy findAnEnemy() throws FileNotFoundException {
@@ -56,6 +72,10 @@ public abstract class Tower extends GameObject implements UpgradableObject, Clon
             } else
                 currentReloadTime -= 1;
         }
+    }
+
+    public boolean isPenetrating() {
+        return penetrating;
     }
 
     public Point getCoordinate() {
@@ -96,5 +116,13 @@ public abstract class Tower extends GameObject implements UpgradableObject, Clon
 
     public String getType() {
         return type;
+    }
+
+    public int getCurrentReloadTime() {
+        return currentReloadTime;
+    }
+
+    public void setCurrentReloadTime(int currentReloadTime) {
+        this.currentReloadTime = currentReloadTime;
     }
 }

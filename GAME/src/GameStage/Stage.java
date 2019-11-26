@@ -47,7 +47,62 @@ public class Stage {
         for (int i = bulletList.size() - 1; i >= 0; i--) {
             if (bulletList.get(i).noTarget())
                 bulletList.remove(i);
+            else if (bulletList.get(i).reachTarget()) {
+                bulletList.get(i).dealDamage();
+                bulletList.remove(i);
+            } else bulletList.get(i).move();
+        }
+    }
 
+    public void spawnEnemy(String type) throws CloneNotSupportedException {
+        switch (type) {
+            case "Armored":
+                enemyList.add(ArmoredEnemy.clone(map.getStart()));
+                break;
+
+            case "Boss":
+                enemyList.add(Boss.clone(map.getStart()));
+                break;
+
+            case "Buster":
+                enemyList.add(BusterEnemy.clone(map.getStart()));
+                break;
+
+            case "Speedy":
+                enemyList.add(SpeedyEnemy.clone(map.getStart()));
+                break;
+
+            case "Tank":
+                enemyList.add(TankEnemy.clone(map.getStart()));
+                break;
+
+            default:
+                enemyList.add(BasicEnemy.clone(map.getStart()));
+                break;
+        }
+    }
+
+    public void buildTower(String type, Point location) throws CloneNotSupportedException {
+        switch (type) {
+            case "AntiArmored":
+                towerList.add(AntiArmoredTower.clone(location));
+                break;
+
+            case "Artillery":
+                towerList.add(ArtilleryTower.clone(location));
+                break;
+
+            case "Blaster":
+                towerList.add(BlasterTower.clone(location));
+                break;
+
+            case "SMG":
+                towerList.add(SMGTower.clone(location));
+                break;
+
+            default:
+                towerList.add(NormalTower.clone(location));
+                break;
         }
     }
 
