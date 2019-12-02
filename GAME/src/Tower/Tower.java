@@ -58,20 +58,16 @@ public abstract class Tower extends GameObject implements UpgradableObject, Clon
     }
 
     @Override
-    public void onHover(int mouseX, int mouseY, Object caller) throws FileNotFoundException {
+    public void onClick(int mouseX, int mouseY, GraphicsContext gc) throws FileNotFoundException {
+
+    }
+    @Override
+    public void onHover(int mouseX, int mouseY, GraphicsContext gc) throws FileNotFoundException {
         if (hover(mouseX, mouseY)){
-            renderRange();
+            System.out.println("Hiện cái hình tròn lên này!");
         }
     }
 
-    @Override
-    public void onClick(int mouseX, int mouseY, Object caller) {
-
-    }
-
-    public void renderRange(){
-
-    }
 
     public Enemy findAnEnemy() throws FileNotFoundException {
         for (Enemy enemy : Controller.getInstance().gameStage.enemyList) {
@@ -89,14 +85,6 @@ public abstract class Tower extends GameObject implements UpgradableObject, Clon
             } else
                 currentReloadTime -= 1;
         }
-    }
-
-    public boolean onHover(int mouseX, int mouseY) {
-        return true;
-    }
-
-    public void renderRange(GraphicsContext gc) {
-
     }
 
     public boolean isPenetrating() {

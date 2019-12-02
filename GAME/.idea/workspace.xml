@@ -2,21 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e12a9c76-a000-4daa-b98a-2ecf76859705" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/Enemy/ArmoredEnemy.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Enemy/Boss.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Enemy/BusterEnemy.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Enemy/SpeedyEnemy.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Enemy/TankEnemy.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Tower/AntiArmoredTower.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Tower/ArtilleryTower.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Tower/BlasterTower.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Tower/SMGTower.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Enemy/Enemy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Enemy/Enemy.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/GameStage/Stage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GameStage/Stage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Object/Bullet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Object/Bullet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Tower/NormalTower.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Tower/NormalTower.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Object/UpgradableObject.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Object/UpgradableObject.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Tower/Tower.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Tower/Tower.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/TowerDefense/Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/TowerDefense/Controller.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/TowerDefense/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/TowerDefense/Main.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
