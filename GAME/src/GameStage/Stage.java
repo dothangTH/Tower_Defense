@@ -60,14 +60,14 @@ public class Stage {
         }
     }
 
-    public void onClick(int mouseX, int mouseY, GraphicsContext gc) throws FileNotFoundException {
-        map.onClick(mouseX, mouseY);
-        for (Tower tower : towerList) tower.onClick(mouseX, mouseY, gc);
-    }
-
-    public void onHover(int mouseX, int mouseY, GraphicsContext gc) throws FileNotFoundException {
-        for (Tower tower : towerList) tower.onHover(mouseX, mouseY, gc);
-    }
+//    public void onClick(int mouseX, int mouseY, GraphicsContext gc) throws FileNotFoundException {
+//        map.onClick(mouseX, mouseY);
+//        for (Tower tower : towerList) tower.onClick(mouseX, mouseY, gc);
+//    }
+//
+//    public void onHover(int mouseX, int mouseY, GraphicsContext gc) throws FileNotFoundException {
+//        for (Tower tower : towerList) tower.onHover(mouseX, mouseY, gc);
+//    }
 
     public void spawnEnemy(String type) throws CloneNotSupportedException {
         switch (type) {
@@ -117,6 +117,19 @@ public class Stage {
 
             default:
                 towerList.add(NormalTower.clone(location));
+                break;
+        }
+    }
+
+    public void mouseInput(String opcode, int mouseX, int mouseY) {
+        switch (opcode) {
+            case "click":
+                for (Tower tower : towerList)
+                    tower.Click(mouseX, mouseY);
+                break;
+            case "hover":
+                for (Tower tower : towerList)
+                    tower.Hover(mouseX, mouseY);
                 break;
         }
     }

@@ -10,10 +10,12 @@ import javafx.scene.image.Image;
 import java.io.File;
 import java.io.FileNotFoundException;
 
-public abstract class Tower extends GameObject implements UpgradableObject, Cloneable{
+public abstract class Tower extends GameObject implements UpgradableObject, Cloneable, ClickableObject{
     private Point coordinate;
     private int X;
     private int Y;
+    private boolean showRange;
+    private Image rangeCircle = new Image(new File("Data/Tower/RangeCircle.png").toURI().toString());
     private int currentReloadTime;
     private final double DMGRATE        =   1.2;
     private final double RLDRATE        =   0.8;
@@ -39,6 +41,7 @@ public abstract class Tower extends GameObject implements UpgradableObject, Clon
         this.Y = 0;
         this.currentReloadTime = 0;
         this.level = 1;
+        showRange = false;
     }
 
     public boolean upgradable() {
@@ -57,18 +60,6 @@ public abstract class Tower extends GameObject implements UpgradableObject, Clon
         }
     }
 
-    @Override
-    public void onClick(int mouseX, int mouseY, GraphicsContext gc) throws FileNotFoundException {
-
-    }
-    @Override
-    public void onHover(int mouseX, int mouseY, GraphicsContext gc) throws FileNotFoundException {
-        if (hover(mouseX, mouseY)){
-            System.out.println("Hiện cái hình tròn lên này!");
-        }
-    }
-
-
     public Enemy findAnEnemy() throws FileNotFoundException {
         for (Enemy enemy : Controller.getInstance().gameStage.enemyList) {
             double distance = Math.sqrt((getX() - enemy.getX()) * (getX() - enemy.getX()) + (getY() - enemy.getY()) * (getY() - enemy.getY()));
@@ -85,6 +76,29 @@ public abstract class Tower extends GameObject implements UpgradableObject, Clon
             } else
                 currentReloadTime -= 1;
         }
+    }
+
+    public boolean onHover(int mouseX, int mouseY) {
+        return (mouseX - X < Map.pixelPerBox && mouseY - Y < Map.pixelPerBox
+            && 0 < mouseX - X && 0 < mouseY - Y);
+    }
+
+    @Override
+    public void Click(int mouseX, int mouseY) {
+
+    }
+
+    @Override
+    public void Hover(int mouseX, int mouseY) {
+        if (onHover(mouseX, mouseY))
+            showRange = true;
+        else showRange = false;
+    }
+
+    @Override
+    public void render(GraphicsContext gc) {
+        super.render(gc);
+        if (showRange) gc.drawImage(rangeCircle, X - range + Map.pixelPerBox / 2, Y - range + Map.pixelPerBox / 2, range * 2, range * 2);
     }
 
     public boolean isPenetrating() {

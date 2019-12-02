@@ -107,6 +107,7 @@ public class Main extends Application implements EventHandler<ActionEvent> {
 
         theStage.setScene(scene);
         theStage.setTitle("Tower_Defense!!!");
+        theStage.show();
 
         AnimationTimer timer = new AnimationTimer() {
             @Override
@@ -122,9 +123,7 @@ public class Main extends Application implements EventHandler<ActionEvent> {
             }
         };
         timer.start();
-
-        Controller.mouseController(scene, gc);
-        theStage.show();
+        controller.mouseEvent(scene);
     }
 
     @Override

@@ -2,7 +2,6 @@ package TowerDefense;
 
 import GameStage.Stage;
 import javafx.scene.Scene;
-import javafx.scene.canvas.GraphicsContext;
 
 import java.io.FileNotFoundException;
 
@@ -21,20 +20,8 @@ public class Controller {
         return instance;
     }
 
-    public static void mouseController(Scene scene, GraphicsContext gc){
-        scene.setOnMouseClicked(event -> {
-            try {
-                Controller.getInstance().gameStage.onClick((int)event.getX(), (int)event.getY(), gc);
-            } catch (FileNotFoundException e) {
-                e.printStackTrace();
-            }
-        });
-        scene.setOnMouseMoved(event -> {
-            try {
-                Controller.getInstance().gameStage.onHover((int)event.getX(), (int)event.getY(), gc);
-            } catch (FileNotFoundException e) {
-                e.printStackTrace();
-            }
-        });
+    public void mouseEvent(Scene theScene) {
+        theScene.setOnMouseClicked(e -> gameStage.mouseInput("click",(int) e.getX(),(int) e.getY()));
+        theScene.setOnMouseMoved(e -> gameStage.mouseInput("hover",(int) e.getX(),(int) e.getY()));
     }
 }

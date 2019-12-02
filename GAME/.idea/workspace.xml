@@ -2,9 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e12a9c76-a000-4daa-b98a-2ecf76859705" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/Object/ClickableObject.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/GameStage/Stage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GameStage/Stage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Object/UpgradableObject.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Object/UpgradableObject.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Tower/Tower.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Tower/Tower.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/TowerDefense/Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/TowerDefense/Controller.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/TowerDefense/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/TowerDefense/Main.java" afterDir="false" />
@@ -36,9 +37,10 @@
   <component name="PropertiesComponent">
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-    <property name="project.structure.last.edited" value="SDKs" />
+    <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
+    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -181,7 +183,21 @@
       <option name="project" value="LOCAL" />
       <updated>1574149461221</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="Added different enemy &amp; tower types.">
+      <created>1574793188260</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1574793188260</updated>
+    </task>
+    <task id="LOCAL-00012" summary="Added Player">
+      <created>1575302775722</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1575302775722</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -206,6 +222,8 @@
     <MESSAGE value="Added moving method for enemy." />
     <MESSAGE value="Enemy's constructor modified." />
     <MESSAGE value="Test moving method" />
-    <option name="LAST_COMMIT_MESSAGE" value="Test moving method" />
+    <MESSAGE value="Added different enemy &amp; tower types." />
+    <MESSAGE value="Added Player" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added Player" />
   </component>
 </project>
