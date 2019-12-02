@@ -1,8 +1,11 @@
 package Object;
 
+import TowerDefense.Controller;
 import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.image.Image;
 import Map.*;
+
+import java.io.FileNotFoundException;
 
 public class GameObject {
     private Point coordinate;
@@ -20,6 +23,11 @@ public class GameObject {
 
     public void render(GraphicsContext gc){
         gc.drawImage(this.getImage(), this.getX(), this.getY(), Map.pixelPerBox, Map.pixelPerBox);
+    }
+
+    public boolean hover(int mouseX, int mouseY) throws FileNotFoundException {
+        return (getX() <= mouseX && mouseX <= getX() + Controller.getInstance().gameStage.getMap().pixelPerBox)
+                && (getY() <= mouseY && mouseY <= getY() + Controller.getInstance().gameStage.getMap().pixelPerBox);
     }
 
     public Point getCoordinate() {

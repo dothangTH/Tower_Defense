@@ -88,6 +88,14 @@ public class Map {
                 this.getHeight()*pixelPerBox);
     }
 
+    public void onClick(int mouseX, int mouseY){
+        // Ấn vào ô có thể đặt tower, nếu giá trị ô đó trong tileMap > 0 thì hiện lên các tower để chọn
+        if (tileMap[mouseX/pixelPerBox][mouseY/pixelPerBox] == 1){
+            // In lên danh sách các tower
+            tileMap[mouseX/pixelPerBox][mouseY/pixelPerBox] = -1;
+        }
+    }
+
     public int getHeight() {
         return height;
     }

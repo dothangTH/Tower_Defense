@@ -60,6 +60,11 @@ public class Stage {
         }
     }
 
+    public void onClick(int mouseX, int mouseY, Object caller){
+        map.onClick(mouseX, mouseY);
+        for (Tower tower : towerList) tower.onClick(mouseX, mouseY, caller);
+    }
+
     public void spawnEnemy(String type) throws CloneNotSupportedException {
         switch (type) {
             case "Armored":

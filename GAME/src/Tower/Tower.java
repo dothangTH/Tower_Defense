@@ -57,6 +57,22 @@ public abstract class Tower extends GameObject implements UpgradableObject, Clon
         }
     }
 
+    @Override
+    public void onHover(int mouseX, int mouseY, Object caller) throws FileNotFoundException {
+        if (hover(mouseX, mouseY)){
+            renderRange();
+        }
+    }
+
+    @Override
+    public void onClick(int mouseX, int mouseY, Object caller) {
+
+    }
+
+    public void renderRange(){
+
+    }
+
     public Enemy findAnEnemy() throws FileNotFoundException {
         for (Enemy enemy : Controller.getInstance().gameStage.enemyList) {
             double distance = Math.sqrt((getX() - enemy.getX()) * (getX() - enemy.getX()) + (getY() - enemy.getY()) * (getY() - enemy.getY()));

@@ -1,6 +1,7 @@
 package TowerDefense;
 
 import GameStage.Stage;
+import javafx.scene.Scene;
 
 import java.io.FileNotFoundException;
 
@@ -17,5 +18,9 @@ public class Controller {
         if (instance == null)
             instance = new Controller();
         return instance;
+    }
+
+    public static void mouseController(Scene scene){
+
     }
 }
