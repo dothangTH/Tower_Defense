@@ -2,6 +2,7 @@ package TowerDefense;
 
 import Enemy.BasicEnemy;
 import Enemy.Enemy;
+import GameStage.Player;
 import Map.Point;
 import Tower.NormalTower;
 import javafx.animation.AnimationTimer;
@@ -89,8 +90,8 @@ public class Main extends Application implements EventHandler<ActionEvent> {
         //controller.gameStage.buildTower("Normal", new Point(7,4));
         //controller.gameStage.buildTower("Artillery", new Point(7,3));
         //controller.gameStage.buildTower("Normal", new Point(8,8));
-        controller.gameStage.buildTower("Blaster", new Point(8,7));
-        //controller.gameStage.buildTower("SMG", new Point(6,7));
+        //controller.gameStage.buildTower("Blaster", new Point(8,7));
+        controller.gameStage.buildTower("SMG", new Point(6,7));
 
         Scene scene = new Scene(root);
         /*scene.setOnMouseClicked(e ->
@@ -111,11 +112,13 @@ public class Main extends Application implements EventHandler<ActionEvent> {
         AnimationTimer timer = new AnimationTimer() {
             @Override
             public void handle(long l) {
-                controller.gameStage.render(gc);
-                try {
-                    controller.gameStage.update();
-                } catch (FileNotFoundException | CloneNotSupportedException e) {
-                    e.printStackTrace();
+                if (!Player.getInstance().isDefeated()) {
+                    controller.gameStage.render(gc);
+                    try {
+                        controller.gameStage.update();
+                    } catch (FileNotFoundException | CloneNotSupportedException e) {
+                        e.printStackTrace();
+                    }
                 }
             }
         };

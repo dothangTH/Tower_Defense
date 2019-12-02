@@ -16,6 +16,7 @@ public class SpeedyEnemy extends Enemy{
         speed = 3;
         hitPoint = 10;
         armor = 2;
+        reward = 3;
     }
 
     public static SpeedyEnemy getInstance() {

@@ -16,6 +16,7 @@ public class Boss extends Enemy{
         speed = 1;
         hitPoint = 1000;
         armor = 15;
+        reward = 50;
     }
 
     public static Boss getInstance() {

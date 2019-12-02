@@ -19,6 +19,7 @@ public abstract class Enemy extends GameObject implements Cloneable, MovableObje
     protected int speed;
     protected int armor;
     protected int hitPoint;
+    protected int reward;
 
 
     protected Enemy() {
@@ -77,6 +78,14 @@ public abstract class Enemy extends GameObject implements Cloneable, MovableObje
 
     public int getArmor() {
         return armor;
+    }
+
+    public int getReward() {
+        return reward;
+    }
+
+    public int getDamage() {
+        return damage;
     }
 
     public Point getCoordinate() {

@@ -16,6 +16,7 @@ public class TankEnemy extends Enemy{
         speed = 1;
         hitPoint = 100;
         armor = 5;
+        reward = 5;
     }
 
     public static TankEnemy getInstance() {

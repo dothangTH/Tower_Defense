@@ -16,6 +16,7 @@ public class BusterEnemy extends Enemy{
         speed = 1;
         hitPoint = 20;
         armor = 0;
+        reward = 4;
     }
 
     public static BusterEnemy getInstance() {

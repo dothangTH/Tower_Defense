@@ -13,11 +13,11 @@ public class SMGTower extends Tower{
         type = "SMG";
         penetrating = false;
         image = new Image (new File("Data/Tower/SMG.png").toURI().toString());
-        damage = 3;
+        damage = 4;
         refundValue = 8;
         price = 15;
         upgradePrice = 10;
-        reloadTime = 5;
+        reloadTime = 10;
         speed = 10;
         range = 200;
     }

@@ -16,6 +16,7 @@ public class BasicEnemy extends Enemy {
         speed = 1;
         hitPoint = 20;
         armor = 3;
+        reward = 3;
     }
 
     public static BasicEnemy getInstance() {

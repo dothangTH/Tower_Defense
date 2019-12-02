@@ -4,6 +4,7 @@ import Enemy.Enemy;
 import Object.*;
 import Map.*;
 import TowerDefense.Controller;
+import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.image.Image;
 
 import java.io.File;
@@ -72,6 +73,14 @@ public abstract class Tower extends GameObject implements UpgradableObject, Clon
             } else
                 currentReloadTime -= 1;
         }
+    }
+
+    public boolean onHover(int mouseX, int mouseY) {
+        return true;
+    }
+
+    public void renderRange(GraphicsContext gc) {
+
     }
 
     public boolean isPenetrating() {

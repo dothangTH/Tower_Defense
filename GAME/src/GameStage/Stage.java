@@ -35,8 +35,14 @@ public class Stage {
 
     public void update() throws FileNotFoundException, CloneNotSupportedException {
         for (int i = enemyList.size() - 1; i >= 0; i--) {
-            if (enemyList.get(i).reachedEnd()) enemyList.remove(enemyList.get(i));
-            else if (!enemyList.get(i).isAlive()) enemyList.remove(enemyList.get(i));
+            if (enemyList.get(i).reachedEnd()) {
+                Player.getInstance().takeDamage(enemyList.get(i).getDamage());
+                enemyList.remove(enemyList.get(i));
+            }
+            else if (!enemyList.get(i).isAlive()) {
+                Player.getInstance().earn(enemyList.get(i).getReward());
+                enemyList.remove(enemyList.get(i));
+            }
                 else enemyList.get(i).move();
         }
 
