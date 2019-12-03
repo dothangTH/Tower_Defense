@@ -51,23 +51,18 @@ public class Stage {
         }
 
         for (int i = bulletList.size() - 1; i >= 0; i--) {
-            if (bulletList.get(i).noTarget())
+            if (bulletList.get(i).isDestroyed)
                 bulletList.remove(i);
+            else if (bulletList.get(i).noTarget())
+                bulletList.get(i).destroy();
             else if (bulletList.get(i).reachTarget()) {
                 bulletList.get(i).dealDamage();
-                bulletList.remove(i);
-            } else bulletList.get(i).move();
+                bulletList.get(i).destroy();
+            }
+            else bulletList.get(i).move();
         }
     }
 
-//    public void onClick(int mouseX, int mouseY, GraphicsContext gc) throws FileNotFoundException {
-//        map.onClick(mouseX, mouseY);
-//        for (Tower tower : towerList) tower.onClick(mouseX, mouseY, gc);
-//    }
-//
-//    public void onHover(int mouseX, int mouseY, GraphicsContext gc) throws FileNotFoundException {
-//        for (Tower tower : towerList) tower.onHover(mouseX, mouseY, gc);
-//    }
 
     public void spawnEnemy(String type) throws CloneNotSupportedException {
         switch (type) {
@@ -121,10 +116,16 @@ public class Stage {
         }
     }
 
-    public void mouseInput(String opcode, int mouseX, int mouseY) {
+    public void mouseInput(String opcode, int mouseX, int mouseY) throws CloneNotSupportedException {
         switch (opcode) {
             case "click":
-                for (Tower tower : towerList)
+                System.out.println(mouseX / Map.pixelPerBox + " " + mouseY / Map.pixelPerBox + " " + map.getTileMap(mouseX / Map.pixelPerBox, mouseY / Map.pixelPerBox) + " " + map.isOccupied(mouseX / Map.pixelPerBox, mouseY / Map.pixelPerBox));
+                if (map.getTileMap(mouseX / Map.pixelPerBox, mouseY / Map.pixelPerBox) == 1 && !map.isOccupied(mouseX / Map.pixelPerBox, mouseY / Map.pixelPerBox)) /*Build*/
+                    {
+                    buildTower("Normal", new Point(mouseX / Map.pixelPerBox, mouseY / Map.pixelPerBox));
+                    map.setOccupied(true, mouseX / Map.pixelPerBox, mouseY / Map.pixelPerBox);
+                    }
+                else for (Tower tower : towerList)
                     tower.Click(mouseX, mouseY);
                 break;
             case "hover":

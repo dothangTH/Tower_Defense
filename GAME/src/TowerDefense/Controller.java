@@ -21,7 +21,19 @@ public class Controller {
     }
 
     public void mouseEvent(Scene theScene) {
-        theScene.setOnMouseClicked(e -> gameStage.mouseInput("click",(int) e.getX(),(int) e.getY()));
-        theScene.setOnMouseMoved(e -> gameStage.mouseInput("hover",(int) e.getX(),(int) e.getY()));
+        theScene.setOnMouseClicked(e -> {
+            try {
+                gameStage.mouseInput("click",(int) e.getX(),(int) e.getY());
+            } catch (CloneNotSupportedException ex) {
+                ex.printStackTrace();
+            }
+        });
+        theScene.setOnMouseMoved(e -> {
+            try {
+                gameStage.mouseInput("hover",(int) e.getX(),(int) e.getY());
+            } catch (CloneNotSupportedException ex) {
+                ex.printStackTrace();
+            }
+        });
     }
 }

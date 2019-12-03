@@ -8,27 +8,28 @@ import javafx.scene.image.Image;
 import java.io.File;
 
 public class Bullet extends GameObject implements Cloneable {
-    private final int MAXIMUMDISTANCE = 500;
 
     private Enemy target;
     private int damage;
     private int speed;
     private boolean penetrating;
-    private int traveledDistance;
+    public boolean isDestroyed;
     private static Bullet instance = null;
     private Image image;
+    private int frame;
     private String type;
 
     private  Bullet() {
         setX(0);
         setY(0);
-        traveledDistance = 0;
+        isDestroyed = false;
         speed = 0;
         damage = 0;
         target = null;
         type = null;
         image = null;
         penetrating = false;
+        frame = 1;
     }
 
     private static Bullet getInstance(){
@@ -50,6 +51,7 @@ public class Bullet extends GameObject implements Cloneable {
     }
 
     public boolean noTarget() {
+        if (target == null) return true;
         return !target.isAlive();
     }
 
@@ -73,6 +75,16 @@ public class Bullet extends GameObject implements Cloneable {
         else
             amount = (int) (getDamage() * (1 - target.getArmor() * 1.0 / (target.getArmor() + 10)));
         target.takeDamage(amount);
+        target = null;
+    }
+
+    public void destroy() {
+        if (frame == 9) isDestroyed = true;
+        else {
+            String path = "Data/Effect/vanish" + frame + ".png";
+            this.image = new Image(new File(path).toURI().toString());
+            frame++;
+        }
     }
 
     public int getDamage() {

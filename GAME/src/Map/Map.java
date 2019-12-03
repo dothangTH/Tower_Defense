@@ -14,7 +14,8 @@ public class Map {
     private Point end;
     private Image image;
     private int[][] tileMap;
-    public static int pixelPerBox = 50;
+    private boolean[][] occupied;
+    public static int pixelPerBox;
     public ArrayList<Point> path;
 
     public Map(int level) throws FileNotFoundException {
@@ -74,26 +75,29 @@ public class Map {
         end = new Point(scanner.nextInt(), scanner.nextInt());
         height = scanner.nextInt();
         width = scanner.nextInt();
+        pixelPerBox = 600/width;
         tileMap = new int[height][width];
+        occupied = new boolean[height][width];
         for (int i = 0; i < height; i++) {
             for (int j = 0; j < width; j++) {
                 tileMap[j][i] = scanner.nextInt();
+                occupied[j][i] = false;
             }
         }
+    }
+
+    public boolean isOccupied(int x, int y) {
+        return occupied[x][y];
+    }
+
+    public void setOccupied(boolean occupied, int X, int Y) {
+        this.occupied[X][Y] = occupied;
     }
 
     public void render(GraphicsContext gc){
         gc.drawImage(this.getImage(), 0, 0,
                 this.getWidth()*pixelPerBox,
                 this.getHeight()*pixelPerBox);
-    }
-
-    public void onClick(int mouseX, int mouseY){
-        // Ấn vào ô có thể đặt tower, nếu giá trị ô đó trong tileMap > 0 thì hiện lên các tower để chọn
-        if (tileMap[mouseX/pixelPerBox][mouseY/pixelPerBox] == 1){
-            // In lên danh sách các tower
-            tileMap[mouseX/pixelPerBox][mouseY/pixelPerBox] = -1;
-        }
     }
 
     public int getHeight() {
@@ -116,7 +120,7 @@ public class Map {
         return end;
     }
 
-    public int[][] getTileMap() {
-        return tileMap;
+    public int getTileMap(int X, int Y) {
+        return tileMap[X][Y];
     }
 }

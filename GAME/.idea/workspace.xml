@@ -2,11 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e12a9c76-a000-4daa-b98a-2ecf76859705" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/Object/ClickableObject.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/GameStage/Stage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GameStage/Stage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Tower/Tower.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Tower/Tower.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Map/Map.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Map/Map.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Map/Point.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Map/Point.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Object/Bullet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Object/Bullet.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/TowerDefense/Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/TowerDefense/Controller.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/TowerDefense/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/TowerDefense/Main.java" afterDir="false" />
     </list>
@@ -197,7 +197,14 @@
       <option name="project" value="LOCAL" />
       <updated>1575302775722</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="Show Range">
+      <created>1575307671522</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1575307671522</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -224,6 +231,7 @@
     <MESSAGE value="Test moving method" />
     <MESSAGE value="Added different enemy &amp; tower types." />
     <MESSAGE value="Added Player" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added Player" />
+    <MESSAGE value="Show Range" />
+    <option name="LAST_COMMIT_MESSAGE" value="Show Range" />
   </component>
 </project>

@@ -87,23 +87,8 @@ public class Main extends Application implements EventHandler<ActionEvent> {
         root.getChildren().add(tank);
 
         controller = new Controller();
-        //controller.gameStage.buildTower("Normal", new Point(7,4));
-        //controller.gameStage.buildTower("Artillery", new Point(7,3));
-        //controller.gameStage.buildTower("Normal", new Point(8,8));
-        //controller.gameStage.buildTower("Blaster", new Point(8,7));
-        controller.gameStage.buildTower("SMG", new Point(6,7));
 
         Scene scene = new Scene(root);
-        /*scene.setOnMouseClicked(e ->
-        {
-            if (e.getX() < 200 && e.getY() < 200){
-                try {
-                    controller.gameStage.towerList.add(NormalTower.clone(new Point(8,8)));
-                } catch (CloneNotSupportedException ex) {
-                    ex.printStackTrace();
-                }
-            }
-        });*/
 
         theStage.setScene(scene);
         theStage.setTitle("Tower_Defense!!!");
