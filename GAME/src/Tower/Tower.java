@@ -12,8 +12,6 @@ import java.io.FileNotFoundException;
 
 public abstract class Tower extends GameObject implements UpgradableObject, Cloneable, ClickableObject{
     private Point coordinate;
-    private int X;
-    private int Y;
     private boolean showRange;
     private Image rangeCircle = new Image(new File("Data/Tower/RangeCircle.png").toURI().toString());
     private int currentReloadTime;
@@ -37,8 +35,8 @@ public abstract class Tower extends GameObject implements UpgradableObject, Clon
 
     protected Tower() {
         this.coordinate = new Point(0,0);
-        this.X = 0;
-        this.Y = 0;
+        setX(0);
+        setY(0);
         this.currentReloadTime = 0;
         this.level = 1;
         showRange = false;
@@ -79,8 +77,8 @@ public abstract class Tower extends GameObject implements UpgradableObject, Clon
     }
 
     public boolean onHover(int mouseX, int mouseY) {
-        return (mouseX - X < Map.pixelPerBox && mouseY - Y < Map.pixelPerBox
-            && 0 < mouseX - X && 0 < mouseY - Y);
+        return (mouseX - getX() < Map.pixelPerBox && mouseY - getY() < Map.pixelPerBox
+            && 0 < mouseX - getX() && 0 < mouseY - getY());
     }
 
     @Override
@@ -98,7 +96,7 @@ public abstract class Tower extends GameObject implements UpgradableObject, Clon
     @Override
     public void render(GraphicsContext gc) {
         super.render(gc);
-        if (showRange) gc.drawImage(rangeCircle, X - range + Map.pixelPerBox / 2, Y - range + Map.pixelPerBox / 2, range * 2, range * 2);
+        if (showRange) gc.drawImage(rangeCircle, getX() - range + Map.pixelPerBox / 2, getY() - range + Map.pixelPerBox / 2, range * 2, range * 2);
     }
 
     public boolean isPenetrating() {
@@ -109,28 +107,8 @@ public abstract class Tower extends GameObject implements UpgradableObject, Clon
         return coordinate;
     }
 
-    @Override
-    public int getX() {
-        return X;
-    }
-
     public void setCoordinate(Point coordinate) {
         this.coordinate = coordinate;
-    }
-
-    @Override
-    public void setX(int x) {
-        X = x;
-    }
-
-    @Override
-    public void setY(int y) {
-        Y = y;
-    }
-
-    @Override
-    public int getY() {
-        return Y;
     }
 
     public int getSpeed() {

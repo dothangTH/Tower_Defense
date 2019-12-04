@@ -15,11 +15,6 @@ public class GameObject {
 
     public GameObject(){}
 
-//    public GameObject(int x, int y, Image image) {
-//        X = x;
-//        Y = y;
-//        this.image = image;
-//    }
 
     public void render(GraphicsContext gc){
         gc.drawImage(this.getImage(), this.getX(), this.getY(), Map.pixelPerBox, Map.pixelPerBox);

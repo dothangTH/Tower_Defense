@@ -24,16 +24,7 @@ import javafx.stage.Stage;
 import java.io.File;
 import java.io.FileNotFoundException;
 
-public class Main extends Application implements EventHandler<ActionEvent> {
-
-    Button basic;
-    Button armored;
-    Button buster;
-    Button boss;
-    Button speedy;
-    Button tank;
-    Controller controller;
-    int i = 0;
+public class Main extends Application {
 
     @Override
     public void start(Stage theStage) throws Exception{
@@ -43,50 +34,7 @@ public class Main extends Application implements EventHandler<ActionEvent> {
         Group root = new Group();
         root.getChildren().add(canvas);
 
-        basic = new Button();
-        basic.setText("Basic");
-        basic.setLayoutY(10);
-        basic.setLayoutX(10);
-        basic.setOnAction(this::handle);
-
-        armored = new Button();
-        armored.setText("Armored");
-        armored.setLayoutY(50);
-        armored.setLayoutX(10);
-        armored.setOnAction(this::handle);
-
-        boss = new Button();
-        boss.setText("Boss");
-        boss.setLayoutY(100);
-        boss.setLayoutX(10);
-        boss.setOnAction(this::handle);
-
-        buster = new Button();
-        buster.setText("Buster");
-        buster.setLayoutY(150);
-        buster.setLayoutX(10);
-        buster.setOnAction(this::handle);
-
-        speedy = new Button();
-        speedy.setText("Speedy");
-        speedy.setLayoutY(200);
-        speedy.setLayoutX(10);
-        speedy.setOnAction(this::handle);
-
-        tank = new Button();
-        tank.setText("Tank");
-        tank.setLayoutY(250);
-        tank.setLayoutX(10);
-        tank.setOnAction(this::handle);
-
-        root.getChildren().add(basic);
-        root.getChildren().add(armored);
-        root.getChildren().add(boss);
-        root.getChildren().add(buster);
-        root.getChildren().add(speedy);
-        root.getChildren().add(tank);
-
-        controller = new Controller();
+        Controller controller = new Controller();
 
         Scene scene = new Scene(root);
 
@@ -97,70 +45,26 @@ public class Main extends Application implements EventHandler<ActionEvent> {
         AnimationTimer timer = new AnimationTimer() {
             @Override
             public void handle(long l) {
-                if (!Player.getInstance().isDefeated()) {
+                if (controller.exit) theStage.close();
+                if (controller.stageInitialized) {
                     controller.gameStage.render(gc);
                     try {
                         controller.gameStage.update();
-                    } catch (FileNotFoundException | CloneNotSupportedException e) {
+                    } catch (FileNotFoundException e) {
+                        e.printStackTrace();
+                    } catch (CloneNotSupportedException e) {
                         e.printStackTrace();
                     }
                 }
+                controller.menu.render(gc);
+                controller.mouseEvent(scene);
             }
         };
         timer.start();
         controller.mouseEvent(scene);
     }
 
-    @Override
-    public void handle(ActionEvent actionEvent) {
-        if (actionEvent.getSource() == basic){
-            try {
-                controller.gameStage.spawnEnemy("Basic");
-            } catch (CloneNotSupportedException e) {
-                e.printStackTrace();
-            }
-        }
 
-        if (actionEvent.getSource() == armored){
-            try {
-                controller.gameStage.spawnEnemy("Armored");
-            } catch (CloneNotSupportedException e) {
-                e.printStackTrace();
-            }
-        }
-
-        if (actionEvent.getSource() == boss){
-            try {
-                controller.gameStage.spawnEnemy("Boss");
-            } catch (CloneNotSupportedException e) {
-                e.printStackTrace();
-            }
-        }
-
-        if (actionEvent.getSource() == buster){
-            try {
-                controller.gameStage.spawnEnemy("Buster");
-            } catch (CloneNotSupportedException e) {
-                e.printStackTrace();
-            }
-        }
-
-        if (actionEvent.getSource() == speedy){
-            try {
-                controller.gameStage.spawnEnemy("Speedy");
-            } catch (CloneNotSupportedException e) {
-                e.printStackTrace();
-            }
-        }
-
-        if (actionEvent.getSource() == tank){
-            try {
-                controller.gameStage.spawnEnemy("Tank");
-            } catch (CloneNotSupportedException e) {
-                e.printStackTrace();
-            }
-        }
-    }
 
     public static void main(String[] args) {
         launch(args);

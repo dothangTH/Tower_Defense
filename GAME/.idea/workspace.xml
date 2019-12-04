@@ -1,12 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="e12a9c76-a000-4daa-b98a-2ecf76859705" name="Default Changelist" comment="">
+    <list default="true" id="e12a9c76-a000-4daa-b98a-2ecf76859705" name="Default Changelist" comment="Main Menu">
+      <change afterPath="$PROJECT_DIR$/src/GameStage/Menu.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Object/GameButton.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/GAME/GameStage/Stage.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/GAME/GameStage/Stage.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/GAME/Map/Map.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/GAME/Map/Map.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/GAME/Object/Bullet.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/GAME/Object/Bullet.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/GAME/Object/ClickableObject.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/GAME/Object/ClickableObject.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/GAME/Object/GameObject.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/GAME/Object/GameObject.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/GAME/Tower/Tower.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/GAME/Tower/Tower.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/GAME/TowerDefense/Controller.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/GAME/TowerDefense/Controller.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/GAME/TowerDefense/Main$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/GAME/TowerDefense/Main$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/GAME/TowerDefense/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/GAME/TowerDefense/Main.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/GameStage/Stage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GameStage/Stage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Map/Map.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Map/Map.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Map/Point.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Map/Point.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Object/Bullet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Object/Bullet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Object/ClickableObject.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Object/ClickableObject.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Object/GameObject.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Object/GameObject.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Tower/Tower.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Tower/Tower.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/TowerDefense/Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/TowerDefense/Controller.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/TowerDefense/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/TowerDefense/Main.java" afterDir="false" />
     </list>
@@ -204,7 +215,14 @@
       <option name="project" value="LOCAL" />
       <updated>1575307671522</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="Build tower and destroy bullet">
+      <created>1575371663960</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1575371663960</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -232,6 +250,18 @@
     <MESSAGE value="Added different enemy &amp; tower types." />
     <MESSAGE value="Added Player" />
     <MESSAGE value="Show Range" />
-    <option name="LAST_COMMIT_MESSAGE" value="Show Range" />
+    <MESSAGE value="Build tower and destroy bullet" />
+    <option name="LAST_COMMIT_MESSAGE" value="Build tower and destroy bullet" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/TowerDefense/Main.java</url>
+          <line>48</line>
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>
