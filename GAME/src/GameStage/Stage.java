@@ -10,6 +10,9 @@ import Object.*;
 import TowerDefense.Controller;
 import Util.GameButton;
 import javafx.scene.canvas.GraphicsContext;
+import javafx.scene.paint.Color;
+import javafx.scene.text.Font;
+import javafx.scene.text.FontWeight;
 
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -41,18 +44,30 @@ public class Stage {
     }
 
     public void render(GraphicsContext gc) {
-        map.render(gc);
-        pauseButton.render(gc);
-        PlayerHUD.getInstance().render(gc);
-        for (Enemy enemy : enemyList) enemy.render(gc);
-        for (Tower tower : towerList) tower.render(gc);
-        for (Bullet bullet : bulletList) bullet.render(gc);
-        if (TowerHUD.getInstance().isShow()) TowerHUD.getInstance().render(gc);
-        if (BuildingHUD.getInstance().isShow()) BuildingHUD.getInstance().render(gc);
+        if (!Player.getInstance().isDefeated()) {
+            map.render(gc);
+            pauseButton.render(gc);
+            PlayerHUD.getInstance().render(gc);
+            for (Enemy enemy : enemyList) enemy.render(gc);
+            for (Tower tower : towerList) tower.render(gc);
+            for (Bullet bullet : bulletList) bullet.render(gc);
+            if (TowerHUD.getInstance().isShow()) TowerHUD.getInstance().render(gc);
+            if (BuildingHUD.getInstance().isShow()) BuildingHUD.getInstance().render(gc);
+        } else {
+            gc.setFill(Color.BLACK);
+            gc.fillRect(0,0,768,768);
+
+            gc.setFill(Color.WHITESMOKE);
+            gc.setFont(Font.font(null, FontWeight.MEDIUM,48));
+            gc.fillText("Defeated!!", 300, 300, 168);
+
+            GameButton home = new GameButton("Data/Button/Home.png", 300, 600, "home");
+            home.render(gc);
+        }
     }
 
     public void update() throws FileNotFoundException, CloneNotSupportedException {
-        if (!pause) {
+        if (!pause && !Player.getInstance().isDefeated()) {
             if (enemyFile.hasNextLine() && (lastSpawn + 2000 < System.currentTimeMillis())){
                 lastSpawn = System.currentTimeMillis();
                 this.spawnEnemy(enemyFile.nextLine());
@@ -161,23 +176,28 @@ public class Stage {
     public void mouseInput(String opcode, int mouseX, int mouseY) throws CloneNotSupportedException, FileNotFoundException {
         switch (opcode) {
             case "click":
-                if (BuildingHUD.getInstance().isShow())
-                    BuildingHUD.getInstance().mouseInput("click", mouseX, mouseY);
-                else
+                if (!Player.getInstance().isDefeated()) {
+                    if (BuildingHUD.getInstance().isShow())
+                        BuildingHUD.getInstance().mouseInput("click", mouseX, mouseY);
+                    else
                     if (TowerHUD.getInstance().isShow())
                         TowerHUD.getInstance().mouseInput(mouseX, mouseY);
                     else
-                        if (pauseButton.onHover(mouseX, mouseY))
-                            pauseButton.Click(mouseX, mouseY);
-                        else
-                            if (map.getTileMap(mouseX / Map.pixelPerBox, mouseY / Map.pixelPerBox) == 1) {
-                                if (!map.isOccupied(mouseX / Map.pixelPerBox, mouseY / Map.pixelPerBox)) {
-                                    BuildingHUD.getInstance().toggle();
-                                    BuildingHUD.getInstance().setTargeting(new Point(mouseX / Map.pixelPerBox, mouseY / Map.pixelPerBox));
-                                } else {
-                                    for (Tower tower : towerList) tower.Click(mouseX, mouseY);
-                                }
-                            }
+                    if (pauseButton.onHover(mouseX, mouseY))
+                        pauseButton.Click(mouseX, mouseY);
+                    else
+                    if (map.getTileMap(mouseX / Map.pixelPerBox, mouseY / Map.pixelPerBox) == 1) {
+                        if (!map.isOccupied(mouseX / Map.pixelPerBox, mouseY / Map.pixelPerBox)) {
+                            BuildingHUD.getInstance().toggle();
+                            BuildingHUD.getInstance().setTargeting(new Point(mouseX / Map.pixelPerBox, mouseY / Map.pixelPerBox));
+                        } else {
+                            for (Tower tower : towerList) tower.Click(mouseX, mouseY);
+                        }
+                    }
+                } else {
+                    GameButton home = new GameButton("Data/Button/Home.png", 300, 600, "home");
+                    home.Click(mouseX, mouseY);
+                }
                 break;
 
             case "hover":

@@ -29,7 +29,6 @@ public class Menu {
         buttonList.add(new GameButton("Data/Button/Continue.png", 300, 300, "igcontinue"));
         buttonList.add(new GameButton("Data/Button/Settings.png", 300, 400, "handler"));
         buttonList.add(new GameButton("Data/Button/Home.png", 300, 500, "home"));
-        buttonList.add(new GameButton("Data/Button/Quit.png", 300, 600, "quit"));
         show = true;
     }
 
