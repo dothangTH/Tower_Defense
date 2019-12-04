@@ -3,9 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="e12a9c76-a000-4daa-b98a-2ecf76859705" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/GAME/HUD/Menu.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/GAME/HUD/Menu.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/GameStage/Stage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GameStage/Stage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/HUD/Menu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/HUD/Menu.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Data/Map/Level3/EnemyFile.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Data/Map/Level3/EnemyFile.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Enemy/Boss.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Enemy/Boss.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -236,7 +235,14 @@
       <option name="project" value="LOCAL" />
       <updated>1575482159387</updated>
     </task>
-    <option name="localTasksCounter" value="19" />
+    <task id="LOCAL-00019" summary="Defeated">
+      <created>1575484871510</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1575484871510</updated>
+    </task>
+    <option name="localTasksCounter" value="20" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -268,6 +274,7 @@
     <MESSAGE value="Main Menu" />
     <MESSAGE value="Build, Sell, Upgrade" />
     <MESSAGE value="Auto Spawn Enemy" />
-    <option name="LAST_COMMIT_MESSAGE" value="Auto Spawn Enemy" />
+    <MESSAGE value="Defeated" />
+    <option name="LAST_COMMIT_MESSAGE" value="Defeated" />
   </component>
 </project>
