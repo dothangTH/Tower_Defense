@@ -1,5 +1,6 @@
 package Enemy;
 
+import GameStage.Player;
 import HUD.TowerHUD;
 import TowerDefense.*;
 import Map.*;
@@ -52,6 +53,10 @@ public abstract class Enemy extends GameObject implements Cloneable, MovableObje
 
     public boolean isAlive() {
         return hitPoint > 0;
+    }
+
+    public void destroy() throws FileNotFoundException {
+        Controller.getInstance().gameStage.enemyList.remove(this);
     }
 
     public void takeDamage(int amount) {

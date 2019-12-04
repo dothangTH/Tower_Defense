@@ -2,6 +2,7 @@ package TowerDefense;
 
 import HUD.Menu;
 import GameStage.Stage;
+import Util.Sound;
 import javafx.scene.Scene;
 
 import java.io.FileNotFoundException;
@@ -14,11 +15,29 @@ public class Controller {
     public boolean stageInitialized;
     private static Controller instance = null;
 
+    public Sound mainTheme;
+    public Sound igTheme;
+    public Sound buildFX;
+    public Sound clickFX;
+    public Sound upgradeFX;
+    public Sound sellFX;
+    public Sound killFX;
+    public Sound hitFX;
+
     public Controller() throws FileNotFoundException {
         instance = this;
         menu = new Menu();
         exit = false;
         stageInitialized = false;
+        mainTheme = new Sound("Data/Sound/Theme/MainTheme.mp3");
+        igTheme = new Sound("Data/Sound/Theme/InGameTheme.mp3");
+        buildFX = new Sound("Data/Sound/FX/build.mp3");
+        clickFX = new Sound("Data/Sound/FX/click.mp3");
+        upgradeFX = new Sound("Data/Sound/FX/upgrade.mp3");
+        sellFX = new Sound("Data/Sound/FX/sell.mp3");
+        killFX = new Sound("Data/Sound/FX/kill.mp3");
+        hitFX = new Sound("Data/Sound/FX/hit.mp3");
+        mainTheme.playTheme();
     }
 
     public void initStage() throws FileNotFoundException {

@@ -1,11 +1,8 @@
 package HUD;
 
-import Object.*;
-import javafx.event.EventHandler;
-import javafx.scene.Group;
+import Util.GameButton;
 import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.paint.Color;
-import javafx.scene.shape.Rectangle;
 
 import java.io.FileNotFoundException;
 import java.util.ArrayList;

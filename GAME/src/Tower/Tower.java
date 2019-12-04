@@ -50,8 +50,9 @@ public abstract class Tower extends GameObject implements UpgradableObject, Clon
     }
 
     @Override
-    public void upgrade() {
+    public void upgrade() throws FileNotFoundException {
         if (upgradable()) {
+            Controller.getInstance().upgradeFX.playFX();
             Player.getInstance().spend(upgradePrice);
             this.damage *= DMGRATE;
             this.reloadTime *= RLDRATE;
@@ -84,6 +85,7 @@ public abstract class Tower extends GameObject implements UpgradableObject, Clon
         Player.getInstance().earn(refundValue);
         Controller.getInstance().gameStage.getMap().setOccupied(false, coordinate.getX(), coordinate.getY());
         Controller.getInstance().gameStage.towerList.remove(this);
+        Controller.getInstance().sellFX.playFX();
     }
 
     public boolean onHover(int mouseX, int mouseY) {

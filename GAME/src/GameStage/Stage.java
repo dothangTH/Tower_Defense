@@ -7,10 +7,14 @@ import HUD.TowerHUD;
 import Map.*;
 import Tower.*;
 import Object.*;
+import TowerDefense.Controller;
+import Util.GameButton;
 import javafx.scene.canvas.GraphicsContext;
 
+import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.ArrayList;
+import java.util.Scanner;
 
 public class Stage {
     public ArrayList<Tower> towerList;
@@ -19,6 +23,9 @@ public class Stage {
     public boolean pause;
     private GameButton pauseButton = new GameButton("Data/Button/Pause.png", 10, 10, "pause");
     private int level;
+
+    private Scanner enemyFile;
+    private long lastSpawn;
 
     private Map map;
 
@@ -29,6 +36,8 @@ public class Stage {
         towerList = new ArrayList<Tower>();
         enemyList = new ArrayList<Enemy>();
         bulletList = new ArrayList<Bullet>();
+        lastSpawn = System.currentTimeMillis();
+        enemyFile = new Scanner(new File(map.getEnemyFile()));
     }
 
     public void render(GraphicsContext gc) {
@@ -44,14 +53,20 @@ public class Stage {
 
     public void update() throws FileNotFoundException, CloneNotSupportedException {
         if (!pause) {
+            if (enemyFile.hasNextLine() && (lastSpawn + 2000 < System.currentTimeMillis())){
+                lastSpawn = System.currentTimeMillis();
+                this.spawnEnemy(enemyFile.nextLine());
+            }
             for (int i = enemyList.size() - 1; i >= 0; i--) {
                 if (enemyList.get(i).reachedEnd()) {
                     Player.getInstance().takeDamage(enemyList.get(i).getDamage());
-                    enemyList.remove(enemyList.get(i));
+                    enemyList.get(i).destroy();
+                    Controller.getInstance().hitFX.playFX();
                 }
                 else if (!enemyList.get(i).isAlive()) {
                     Player.getInstance().earn(enemyList.get(i).getReward());
                     enemyList.remove(enemyList.get(i));
+                    Controller.getInstance().killFX.playFX();
                 }
                 else enemyList.get(i).move();
             }
@@ -103,7 +118,8 @@ public class Stage {
         }
     }
 
-    public void buildTower(String type, Point location) throws CloneNotSupportedException {
+    public void buildTower(String type, Point location) throws CloneNotSupportedException, FileNotFoundException {
+        Controller.getInstance().buildFX.playFX();
         switch (type) {
             case "AntiArmored":
                 if (AntiArmoredTower.getInstance().getPrice() <= Player.getInstance().getWallet()) {

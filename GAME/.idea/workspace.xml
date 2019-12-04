@@ -2,33 +2,28 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e12a9c76-a000-4daa-b98a-2ecf76859705" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/HUD/BuildingHUD.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/HUD/PlayerHUD.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/HUD/TowerHUD.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Util/Sound.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Data/Map/Level3/TileMap.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Data/Map/Level3/TileMap.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/GAME/Enemy/Enemy.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/GAME/Enemy/Enemy.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/GAME/GameStage/Player.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/GAME/GameStage/Player.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/GAME/GameStage/Stage.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/GAME/GameStage/Stage.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/GAME/HUD/Menu.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/GAME/HUD/Menu.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/GAME/HUD/TowerHUD.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/GAME/HUD/TowerHUD.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/GAME/Map/Map.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/GAME/Map/Map.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/GAME/Object/Bullet.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/GAME/Object/Bullet.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/GAME/Object/ClickableObject.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/GAME/Object/ClickableObject.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/GAME/Tower/NormalTower.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/GAME/Tower/NormalTower.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/GAME/Object/GameButton.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/GAME/Object/UpgradableObject.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/GAME/Object/UpgradableObject.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/GAME/Tower/Tower.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/GAME/Tower/Tower.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/GAME/TowerDefense/Controller.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/GAME/TowerDefense/Controller.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/GAME/TowerDefense/Main$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/GAME/TowerDefense/Main$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/GAME/TowerDefense/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/GAME/TowerDefense/Main.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Enemy/Enemy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Enemy/Enemy.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/GameStage/Menu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/HUD/Menu.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/GameStage/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GameStage/Player.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/GameStage/Stage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GameStage/Stage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/HUD/BuildingHUD.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/HUD/BuildingHUD.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/HUD/Menu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/HUD/Menu.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/HUD/TowerHUD.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/HUD/TowerHUD.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Map/Map.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Map/Map.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Object/Bullet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Object/Bullet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Object/ClickableObject.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Object/ClickableObject.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Object/GameButton.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Object/GameButton.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Tower/NormalTower.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Tower/NormalTower.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Object/GameButton.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Util/GameButton.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Object/UpgradableObject.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Object/UpgradableObject.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Tower/Tower.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Tower/Tower.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/TowerDefense/Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/TowerDefense/Controller.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/TowerDefense/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/TowerDefense/Main.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -238,7 +233,14 @@
       <option name="project" value="LOCAL" />
       <updated>1575438108520</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="Build, Sell, Upgrade">
+      <created>1575470477413</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1575470477413</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -268,6 +270,7 @@
     <MESSAGE value="Show Range" />
     <MESSAGE value="Build tower and destroy bullet" />
     <MESSAGE value="Main Menu" />
-    <option name="LAST_COMMIT_MESSAGE" value="Main Menu" />
+    <MESSAGE value="Build, Sell, Upgrade" />
+    <option name="LAST_COMMIT_MESSAGE" value="Build, Sell, Upgrade" />
   </component>
 </project>
