@@ -17,14 +17,13 @@ public class Map {
     private boolean[][] occupied;
     public static int pixelPerBox;
     public ArrayList<Point> path;
-
-    public final int SCREENWIDTH = 768;
-    public final int SCREENHEIGHT = 768;
+    private String enemyFile;
 
     public Map(int level) throws FileNotFoundException {
         this.image = new Image(new File("Data/Map/Level1/Image.png").toURI().toString());
         loadTileMap("Data/Map/Level" + level + "/TileMap.txt");
         path = findPath();
+        enemyFile = "Data/Map/Level" + level + "/EnemyFile";
     }
 
     public ArrayList<Point> findPath(){
@@ -78,7 +77,7 @@ public class Map {
         end = new Point(scanner.nextInt(), scanner.nextInt());
         height = scanner.nextInt();
         width = scanner.nextInt();
-        pixelPerBox = SCREENWIDTH/width;
+        pixelPerBox = 600/width;
         tileMap = new int[height][width];
         occupied = new boolean[height][width];
         for (int i = 0; i < height; i++) {
@@ -125,5 +124,13 @@ public class Map {
 
     public int getTileMap(int X, int Y) {
         return tileMap[X][Y];
+    }
+
+    public String getEnemyFile() {
+        return enemyFile;
+    }
+
+    public void setEnemyFile(String enemyFile) {
+        this.enemyFile = enemyFile;
     }
 }
