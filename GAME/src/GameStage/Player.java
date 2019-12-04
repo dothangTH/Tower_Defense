@@ -36,4 +36,12 @@ public class Player {
     public void remove() {
         instance = null;
     }
+
+    public int getHitPoint() {
+        return hitPoint;
+    }
+
+    public int getWallet() {
+        return wallet;
+    }
 }

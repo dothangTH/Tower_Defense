@@ -19,7 +19,7 @@ public class NormalTower extends Tower{
         upgradePrice = 5;
         reloadTime = 20;
         speed = 10;
-        range = 200;
+        range = 2 * Map.pixelPerBox;
     }
 
     public static NormalTower getInstance() {

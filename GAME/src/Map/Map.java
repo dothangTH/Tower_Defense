@@ -18,6 +18,9 @@ public class Map {
     public static int pixelPerBox;
     public ArrayList<Point> path;
 
+    public final int SCREENWIDTH = 768;
+    public final int SCREENHEIGHT = 768;
+
     public Map(int level) throws FileNotFoundException {
         this.image = new Image(new File("Data/Map/Level1/Image.png").toURI().toString());
         loadTileMap("Data/Map/Level" + level + "/TileMap.txt");
@@ -75,7 +78,7 @@ public class Map {
         end = new Point(scanner.nextInt(), scanner.nextInt());
         height = scanner.nextInt();
         width = scanner.nextInt();
-        pixelPerBox = 600/width;
+        pixelPerBox = SCREENWIDTH/width;
         tileMap = new int[height][width];
         occupied = new boolean[height][width];
         for (int i = 0; i < height; i++) {

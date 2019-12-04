@@ -1,8 +1,10 @@
 package Enemy;
 
+import HUD.TowerHUD;
 import TowerDefense.*;
 import Map.*;
 import Object.*;
+import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.image.Image;
 
 import java.io.File;
@@ -54,6 +56,12 @@ public abstract class Enemy extends GameObject implements Cloneable, MovableObje
 
     public void takeDamage(int amount) {
         hitPoint -= amount;
+    }
+
+    @Override
+    public void render(GraphicsContext gc) {
+        if (!TowerHUD.getInstance().isShow() || getX() < TowerHUD.getInstance().getX() || getY() < TowerHUD.getInstance().getY())
+            super.render(gc);
     }
 
     @Override

@@ -1,10 +1,7 @@
 package TowerDefense;
 
-import GameStage.Menu;
+import HUD.Menu;
 import GameStage.Stage;
-import Object.GameButton;
-import javafx.event.Event;
-import javafx.event.EventHandler;
 import javafx.scene.Scene;
 
 import java.io.FileNotFoundException;
@@ -40,7 +37,7 @@ public class Controller {
             theScene.setOnMouseClicked(e -> {
                 try {
                     menu.mouseInput((int) e.getX(), (int) e.getY());
-                } catch (FileNotFoundException ex) {
+                } catch (FileNotFoundException | CloneNotSupportedException ex) {
                     ex.printStackTrace();
                 }
             });

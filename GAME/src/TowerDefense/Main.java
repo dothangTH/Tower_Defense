@@ -28,7 +28,7 @@ public class Main extends Application {
 
     @Override
     public void start(Stage theStage) throws Exception{
-        Canvas canvas = new Canvas(600, 600);
+        Canvas canvas = new Canvas(768, 768);
         GraphicsContext gc = canvas.getGraphicsContext2D();
 
         Group root = new Group();
@@ -45,7 +45,6 @@ public class Main extends Application {
         AnimationTimer timer = new AnimationTimer() {
             @Override
             public void handle(long l) {
-                if (controller.exit) theStage.close();
                 if (controller.stageInitialized) {
                     controller.gameStage.render(gc);
                     try {
@@ -58,10 +57,10 @@ public class Main extends Application {
                 }
                 controller.menu.render(gc);
                 controller.mouseEvent(scene);
+                if (controller.exit) theStage.close();
             }
         };
         timer.start();
-        controller.mouseEvent(scene);
     }
 
 

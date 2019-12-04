@@ -1,6 +1,9 @@
 package Tower;
 
 import Enemy.Enemy;
+import GameStage.Player;
+import HUD.PlayerHUD;
+import HUD.TowerHUD;
 import Object.*;
 import Map.*;
 import TowerDefense.Controller;
@@ -49,6 +52,7 @@ public abstract class Tower extends GameObject implements UpgradableObject, Clon
     @Override
     public void upgrade() {
         if (upgradable()) {
+            Player.getInstance().spend(upgradePrice);
             this.damage *= DMGRATE;
             this.reloadTime *= RLDRATE;
             this.refundValue *= RFNDRATE;
@@ -76,6 +80,12 @@ public abstract class Tower extends GameObject implements UpgradableObject, Clon
         }
     }
 
+    public void sell() throws FileNotFoundException {
+        Player.getInstance().earn(refundValue);
+        Controller.getInstance().gameStage.getMap().setOccupied(false, coordinate.getX(), coordinate.getY());
+        Controller.getInstance().gameStage.towerList.remove(this);
+    }
+
     public boolean onHover(int mouseX, int mouseY) {
         return (mouseX - getX() < Map.pixelPerBox && mouseY - getY() < Map.pixelPerBox
             && 0 < mouseX - getX() && 0 < mouseY - getY());
@@ -83,20 +93,32 @@ public abstract class Tower extends GameObject implements UpgradableObject, Clon
 
     @Override
     public void Click(int mouseX, int mouseY) {
-
+        if (onHover(mouseX, mouseY)) {
+            TowerHUD.getInstance().setTower(this);
+            TowerHUD.getInstance().toggle();
+        }
     }
 
     @Override
     public void Hover(int mouseX, int mouseY) {
-        if (onHover(mouseX, mouseY))
+        if (onHover(mouseX, mouseY) && !TowerHUD.getInstance().isShow())
             showRange = true;
-        else showRange = false;
+        else
+            showRange = false;
     }
 
     @Override
     public void render(GraphicsContext gc) {
-        super.render(gc);
-        if (showRange) gc.drawImage(rangeCircle, getX() - range + Map.pixelPerBox / 2, getY() - range + Map.pixelPerBox / 2, range * 2, range * 2);
+            super.render(gc);
+            if (showRange) gc.drawImage(rangeCircle, getX() - range + Map.pixelPerBox / 2, getY() - range + Map.pixelPerBox / 2, range * 2, range * 2);
+    }
+
+    public boolean toggleShowRange(){
+        if (showRange) {
+            showRange = false;
+            return true;
+        }
+        return false;
     }
 
     public boolean isPenetrating() {
@@ -105,6 +127,10 @@ public abstract class Tower extends GameObject implements UpgradableObject, Clon
 
     public Point getCoordinate() {
         return coordinate;
+    }
+
+    public int getLevel() {
+        return level;
     }
 
     public void setCoordinate(Point coordinate) {
@@ -119,6 +145,18 @@ public abstract class Tower extends GameObject implements UpgradableObject, Clon
         return damage;
     }
 
+    public int getPrice() {
+        return price;
+    }
+
+    public int getRange() {
+        return range;
+    }
+
+    public int getReloadTime() {
+        return reloadTime;
+    }
+
     public String getType() {
         return type;
     }
@@ -129,5 +167,13 @@ public abstract class Tower extends GameObject implements UpgradableObject, Clon
 
     public void setCurrentReloadTime(int currentReloadTime) {
         this.currentReloadTime = currentReloadTime;
+    }
+
+    public int getUpgradePrice() {
+        return upgradePrice;
+    }
+
+    public int getRefundValue() {
+        return refundValue;
     }
 }

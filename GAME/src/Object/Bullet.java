@@ -1,8 +1,10 @@
 package Object;
 
 import Enemy.Enemy;
+import HUD.TowerHUD;
 import Map.Map;
 import Tower.Tower;
+import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.image.Image;
 
 import java.io.File;
@@ -85,6 +87,12 @@ public class Bullet extends GameObject implements Cloneable {
             this.image = new Image(new File(path).toURI().toString());
             frame++;
         }
+    }
+
+    @Override
+    public void render(GraphicsContext gc) {
+        if (!TowerHUD.getInstance().isShow() || getX() < TowerHUD.getInstance().getX() || getY() < TowerHUD.getInstance().getY())
+            super.render(gc);
     }
 
     public int getDamage() {

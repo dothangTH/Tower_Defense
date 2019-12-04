@@ -1,10 +1,12 @@
 package GameStage;
 
 import Enemy.*;
+import HUD.BuildingHUD;
+import HUD.PlayerHUD;
+import HUD.TowerHUD;
 import Map.*;
 import Tower.*;
 import Object.*;
-import TowerDefense.Controller;
 import javafx.scene.canvas.GraphicsContext;
 
 import java.io.FileNotFoundException;
@@ -32,9 +34,12 @@ public class Stage {
     public void render(GraphicsContext gc) {
         map.render(gc);
         pauseButton.render(gc);
+        PlayerHUD.getInstance().render(gc);
         for (Enemy enemy : enemyList) enemy.render(gc);
         for (Tower tower : towerList) tower.render(gc);
         for (Bullet bullet : bulletList) bullet.render(gc);
+        if (TowerHUD.getInstance().isShow()) TowerHUD.getInstance().render(gc);
+        if (BuildingHUD.getInstance().isShow()) BuildingHUD.getInstance().render(gc);
     }
 
     public void update() throws FileNotFoundException, CloneNotSupportedException {
@@ -101,47 +106,71 @@ public class Stage {
     public void buildTower(String type, Point location) throws CloneNotSupportedException {
         switch (type) {
             case "AntiArmored":
-                towerList.add(AntiArmoredTower.clone(location));
+                if (AntiArmoredTower.getInstance().getPrice() <= Player.getInstance().getWallet()) {
+                    towerList.add(AntiArmoredTower.clone(location));
+                    Player.getInstance().spend(AntiArmoredTower.getInstance().getPrice());
+                }
                 break;
 
             case "Artillery":
-                towerList.add(ArtilleryTower.clone(location));
+                if (ArtilleryTower.getInstance().getPrice() <= Player.getInstance().getWallet()) {
+                    towerList.add(ArtilleryTower.clone(location));
+                    Player.getInstance().spend(ArtilleryTower.getInstance().getPrice());
+                }
                 break;
 
             case "Blaster":
-                towerList.add(BlasterTower.clone(location));
+                if (BlasterTower.getInstance().getPrice() <= Player.getInstance().getWallet()) {
+                    towerList.add(BlasterTower.clone(location));
+                    Player.getInstance().spend(BlasterTower.getInstance().getPrice());
+                }
                 break;
 
             case "SMG":
-                towerList.add(SMGTower.clone(location));
+                if (SMGTower.getInstance().getPrice() <= Player.getInstance().getWallet()) {
+                    towerList.add(SMGTower.clone(location));
+                    Player.getInstance().spend(SMGTower.getInstance().getPrice());
+                }
                 break;
 
             default:
-                towerList.add(NormalTower.clone(location));
+                if (NormalTower.getInstance().getPrice() <= Player.getInstance().getWallet()) {
+                    towerList.add(NormalTower.clone(location));
+                    Player.getInstance().spend(NormalTower.getInstance().getPrice());
+                }
                 break;
         }
     }
 
     public void mouseInput(String opcode, int mouseX, int mouseY) throws CloneNotSupportedException, FileNotFoundException {
-        if (!pause) {
-            switch (opcode) {
-                case "click":
-                    if (pauseButton.onHover(mouseX, mouseY)) pauseButton.Click(mouseX, mouseY);
-                    else {
-                        if (map.getTileMap(mouseX / Map.pixelPerBox, mouseY / Map.pixelPerBox) == 1 && !map.isOccupied(mouseX / Map.pixelPerBox, mouseY / Map.pixelPerBox)) /*Build*/
-                        {
-                            buildTower("Normal", new Point(mouseX / Map.pixelPerBox, mouseY / Map.pixelPerBox));
-                            map.setOccupied(true, mouseX / Map.pixelPerBox, mouseY / Map.pixelPerBox);
-                        }
-                        else for (Tower tower : towerList)
-                            tower.Click(mouseX, mouseY);
-                    }
-                    break;
-                case "hover":
+        switch (opcode) {
+            case "click":
+                if (BuildingHUD.getInstance().isShow())
+                    BuildingHUD.getInstance().mouseInput("click", mouseX, mouseY);
+                else
+                    if (TowerHUD.getInstance().isShow())
+                        TowerHUD.getInstance().mouseInput(mouseX, mouseY);
+                    else
+                        if (pauseButton.onHover(mouseX, mouseY))
+                            pauseButton.Click(mouseX, mouseY);
+                        else
+                            if (map.getTileMap(mouseX / Map.pixelPerBox, mouseY / Map.pixelPerBox) == 1) {
+                                if (!map.isOccupied(mouseX / Map.pixelPerBox, mouseY / Map.pixelPerBox)) {
+                                    BuildingHUD.getInstance().toggle();
+                                    BuildingHUD.getInstance().setTargeting(new Point(mouseX / Map.pixelPerBox, mouseY / Map.pixelPerBox));
+                                } else {
+                                    for (Tower tower : towerList) tower.Click(mouseX, mouseY);
+                                }
+                            }
+                break;
+
+            case "hover":
+                if (!BuildingHUD.getInstance().isShow()) {
                     for (Tower tower : towerList)
                         tower.Hover(mouseX, mouseY);
-                    break;
-            }
+                }
+                else BuildingHUD.getInstance().mouseInput("hover", mouseX, mouseY);
+                break;
         }
     }
 

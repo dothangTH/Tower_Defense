@@ -1,8 +1,16 @@
 package Object;
 
+import GameStage.Player;
+import HUD.BuildingHUD;
+import HUD.TowerHUD;
+import Tower.*;
+import Map.*;
 import TowerDefense.Controller;
 import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.image.Image;
+import javafx.scene.text.Font;
+import javafx.scene.text.FontWeight;
+
 import java.io.File;
 import java.io.FileNotFoundException;
 
@@ -18,11 +26,10 @@ public class GameButton extends GameObject implements ClickableObject{
     }
 
     @Override
-    public void Click(int mouseX, int mouseY) throws FileNotFoundException {
+    public void Click(int mouseX, int mouseY) throws FileNotFoundException, CloneNotSupportedException {
         if (onHover(mouseX, mouseY))
             switch (name) {
                 case "newgame":
-                    System.out.println("NewGame");
                     Controller.getInstance().menu.setShow(false);
                     Controller.getInstance().level = 1;
                     Controller.getInstance().initStage();
@@ -39,17 +46,93 @@ public class GameButton extends GameObject implements ClickableObject{
                     break;
 
                 case "home":
-                    Controller.getInstance().stageInitialized= false;
+                    Controller.getInstance().stageInitialized = false;
+                    Player.getInstance().remove();
                     Controller.getInstance().menu.mainMenu();
                     break;
 
                 case "quit":
                     Controller.getInstance().exit = true;
+                    break;
+
+                case "upgrade":
+                    if (TowerHUD.getInstance().getTower().getUpgradePrice() <= Player.getInstance().getWallet()) {
+                        TowerHUD.getInstance().getTower().upgrade();
+                    }
+                    break;
+
+                case "sell":
+                    TowerHUD.getInstance().getTower().sell();
+                    TowerHUD.getInstance().toggle();
+                    break;
+
+                case "normal":
+                    if (NormalTower.getInstance().getPrice() <= Player.getInstance().getWallet()) {
+                        Controller.getInstance().gameStage.buildTower("Normal", BuildingHUD.getInstance().getTargeting());
+                        Controller.getInstance().gameStage.getMap().setOccupied(true, BuildingHUD.getInstance().getTargeting().getX(), BuildingHUD.getInstance().getTargeting().getY());
+                        BuildingHUD.getInstance().toggle();
+                    }
+                    break;
+
+                case "smg":
+                    if (SMGTower.getInstance().getPrice() <= Player.getInstance().getWallet()) {
+                        Controller.getInstance().gameStage.buildTower("SMG", BuildingHUD.getInstance().getTargeting());
+                        Controller.getInstance().gameStage.getMap().setOccupied(true, BuildingHUD.getInstance().getTargeting().getX(), BuildingHUD.getInstance().getTargeting().getY());
+                        BuildingHUD.getInstance().toggle();
+                    }
+                    break;
+
+                case "artillery":
+                    if (ArtilleryTower.getInstance().getPrice() <= Player.getInstance().getWallet()) {
+                        Controller.getInstance().gameStage.buildTower("Artillery", BuildingHUD.getInstance().getTargeting());
+                        Controller.getInstance().gameStage.getMap().setOccupied(true, BuildingHUD.getInstance().getTargeting().getX(), BuildingHUD.getInstance().getTargeting().getY());
+                        BuildingHUD.getInstance().toggle();
+                    }
+                    break;
+
+                case "antiarmored":
+                    if (AntiArmoredTower.getInstance().getPrice() <= Player.getInstance().getWallet()) {
+                        Controller.getInstance().gameStage.buildTower("AntiArmored", BuildingHUD.getInstance().getTargeting());
+                        Controller.getInstance().gameStage.getMap().setOccupied(true, BuildingHUD.getInstance().getTargeting().getX(), BuildingHUD.getInstance().getTargeting().getY());
+                        BuildingHUD.getInstance().toggle();
+                    }
+                    break;
+
+                case "blaster":
+                    if (BlasterTower.getInstance().getPrice() <= Player.getInstance().getWallet()) {
+                        Controller.getInstance().gameStage.buildTower("Blaster", BuildingHUD.getInstance().getTargeting());
+                        Controller.getInstance().gameStage.getMap().setOccupied(true, BuildingHUD.getInstance().getTargeting().getX(), BuildingHUD.getInstance().getTargeting().getY());
+                        BuildingHUD.getInstance().toggle();
+                    }
+                    break;
             };
     }
 
     @Override
     public void Hover(int mouseX, int mouseY) {
+        if (onHover(mouseX, mouseY)) {
+            switch (name) {
+                case "normal":
+                    BuildingHUD.getInstance().setPrice(NormalTower.getInstance().getPrice());
+                    break;
+
+                case "smg":
+                    BuildingHUD.getInstance().setPrice(SMGTower.getInstance().getPrice());
+                    break;
+
+                case "artillery":
+                    BuildingHUD.getInstance().setPrice(ArtilleryTower.getInstance().getPrice());
+                    break;
+
+                case "antiarmored":
+                    BuildingHUD.getInstance().setPrice(AntiArmoredTower.getInstance().getPrice());
+                    break;
+
+                case "blaster":
+                    BuildingHUD.getInstance().setPrice(BlasterTower.getInstance().getPrice());
+                    break;
+            }
+        }
     }
 
     @Override

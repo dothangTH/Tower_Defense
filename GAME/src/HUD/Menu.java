@@ -1,4 +1,4 @@
-package GameStage;
+package HUD;
 
 import Object.*;
 import javafx.event.EventHandler;
@@ -20,29 +20,29 @@ public class Menu {
         type = "main";
         show = true;
         buttonList = new ArrayList<GameButton>();
-        buttonList.add(new GameButton("Data/Button/Continue.png", 200, 100, "continue"));
-        buttonList.add(new GameButton("Data/Button/NewGame.png", 200, 200, "newgame"));
-        buttonList.add(new GameButton("Data/Button/Settings.png", 200, 300, "settings"));
-        buttonList.add(new GameButton("Data/Button/Quit.png", 200, 400, "quit"));
+        buttonList.add(new GameButton("Data/Button/Continue.png", 300, 300, "continue"));
+        buttonList.add(new GameButton("Data/Button/NewGame.png", 300, 400, "newgame"));
+        buttonList.add(new GameButton("Data/Button/Settings.png", 300, 500, "settings"));
+        buttonList.add(new GameButton("Data/Button/Quit.png", 300, 600, "quit"));
     }
 
     public void ingameMenu() {
         buttonList.clear();
         type = "ingame";
-        buttonList.add(new GameButton("Data/Button/Continue.png", 200, 100, "igcontinue"));
-        buttonList.add(new GameButton("Data/Button/Settings.png", 200, 200, "handler"));
-        buttonList.add(new GameButton("Data/Button/Home.png", 200, 300, "home"));
-        buttonList.add(new GameButton("Data/Button/Quit.png", 200, 400, "quit"));
+        buttonList.add(new GameButton("Data/Button/Continue.png", 300, 300, "igcontinue"));
+        buttonList.add(new GameButton("Data/Button/Settings.png", 300, 400, "handler"));
+        buttonList.add(new GameButton("Data/Button/Home.png", 300, 500, "home"));
+        buttonList.add(new GameButton("Data/Button/Quit.png", 300, 600, "quit"));
         show = true;
     }
 
     public void mainMenu() {
         buttonList.clear();
         type = "main";
-        buttonList.add(new GameButton("Data/Button/Continue.png", 200, 100, "continue"));
-        buttonList.add(new GameButton("Data/Button/NewGame.png", 200, 200, "newgame"));
-        buttonList.add(new GameButton("Data/Button/Settings.png", 200, 300, "settings"));
-        buttonList.add(new GameButton("Data/Button/Quit.png", 200, 400, "quit"));
+        buttonList.add(new GameButton("Data/Button/Continue.png", 300, 300, "continue"));
+        buttonList.add(new GameButton("Data/Button/NewGame.png", 300, 400, "newgame"));
+        buttonList.add(new GameButton("Data/Button/Settings.png", 300, 500, "settings"));
+        buttonList.add(new GameButton("Data/Button/Quit.png", 300, 600, "quit"));
         show = true;
     }
 
@@ -50,10 +50,10 @@ public class Menu {
         if (show) {
             if (type == "ingame") {
                 gc.setFill(Color.rgb(200, 200, 200, 0.5));
-                gc.fillRect(0, 0, 600, 600);
+                gc.fillRect(0, 0, 768, 768);
             } else {
                 gc.setFill(Color.BLACK);
-                gc.fillRect(0, 0, 600, 600);
+                gc.fillRect(0, 0, 768, 768);
             }
 
             for (GameButton gameButton : buttonList) {
@@ -70,7 +70,7 @@ public class Menu {
         return show;
     }
 
-    public void mouseInput(int mouseX, int mouseY) throws FileNotFoundException {
+    public void mouseInput(int mouseX, int mouseY) throws FileNotFoundException, CloneNotSupportedException {
         for (GameButton gameButton : buttonList) {
             gameButton.Click(mouseX, mouseY);
             if (gameButton.getName() == "home") return;
