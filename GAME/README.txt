@@ -1,7 +1,8 @@
 -Đỗ Trịnh Quốc Thắng
 -Nguyễn Đình Anh Tuấn
 ---------------------------------------------------------------------------------------------	
-Đây chỉ là bản demo nên kích thước cửa sổ hiện đang là cố định, chưa thể thay đổi.
+NOTE: ĐÂY CHỈ LÀ BẢN DEMO NÊN KÍCH THƯỚC CỬA SỔ GAME ĐANG LÀ CỐ ĐỊNH, CHƯA THỂ THAY ĐỔI
+HIỆN CHƯA CÓ CHỨC NĂNG SAVE/LOAD GAME NÊN NEWGAME VÀ CONTINUE CHỈ LÀ BẮT ĐẦU 2 MÀN CHƠI KHÁC NHAU
 
 Các chức năng hiện có trong game
 - Load bản đồ từ file 
@@ -12,6 +13,13 @@ Các chức năng hiện có trong game
 - Đạn đuổi theo mục tiêu, gây sát thương và phá hủy đạn khi chạm vào mục tiêu.
 - Có theme và soundfx riêng biệt
 - Lưu tiền và máu của player (góc trên bên trái màn hình)
+- Có pause và continue
+- Game kết thúc khi player hết máu
 - Có Animation (hiệu ứng phá hủy đạn)
 
-HIỆN CHƯA CÓ CHỨC NĂNG SAVE/LOAD GAME NÊN NEWGAME VÀ CONTINUE CHỈ LÀ BẮT ĐẦU 2 MÀN CHƠI KHÁC NHAU
+---------------------------------------------------------------------------------------------
+Cách chơi:
+- New Game hoặc Continue
+- Click vào 1 ô móng trống để hiện menu xây tower
+- Click vào 1 loại tower để xây tower đó
+- Click vào 1 ô móng đã xây tower để hiện stats, upgrade và bán tower

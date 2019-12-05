@@ -41,15 +41,15 @@ public class BlasterTower extends Tower{
         return tower;
     }
 
-    @Override
-    public void attack() throws FileNotFoundException, CloneNotSupportedException {
-        if (this.getCurrentReloadTime() <= 0) {
-            for (Enemy enemy : Controller.getInstance().gameStage.enemyList) {
-                double distance = Math.sqrt((getX() - enemy.getX()) * (getX() - enemy.getX()) + (getY() - enemy.getY()) * (getY() - enemy.getY()));
-                if (distance < range) Controller.getInstance().gameStage.bulletList.add(Bullet.clone(this, enemy));
-            }
-            setCurrentReloadTime(reloadTime);
-        } else
-            setCurrentReloadTime(getCurrentReloadTime() - 1);
-    }
+//    @Override
+//    public void attack() throws FileNotFoundException, CloneNotSupportedException {
+//        if (this.getCurrentReloadTime() <= 0) {
+//            for (Enemy enemy : Controller.getInstance().gameStage.enemyList) {
+//                double distance = Math.sqrt((getX() - enemy.getX()) * (getX() - enemy.getX()) + (getY() - enemy.getY()) * (getY() - enemy.getY()));
+//                if (distance < range) Controller.getInstance().gameStage.bulletList.add(Bullet.clone(this, enemy));
+//            }
+//            setCurrentReloadTime(reloadTime);
+//        } else
+//            setCurrentReloadTime(getCurrentReloadTime() - 1);
+//    }
 }

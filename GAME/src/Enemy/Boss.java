@@ -13,7 +13,7 @@ public class Boss extends Enemy{
         type = "Boss";
         image = new Image(new File("Data/Enemy/Boss.png").toURI().toString());
         damage = 100;
-        speed = 5;
+        speed = 1;
         hitPoint = 1000;
         armor = 15;
         reward = 50;

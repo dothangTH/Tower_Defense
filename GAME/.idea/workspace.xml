@@ -3,8 +3,11 @@
   <component name="ChangeListManager">
     <list default="true" id="e12a9c76-a000-4daa-b98a-2ecf76859705" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Data/Map/Level1/EnemyFile.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Data/Map/Level1/EnemyFile.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Data/Map/Level3/EnemyFile.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Data/Map/Level3/EnemyFile.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.txt" beforeDir="false" afterPath="$PROJECT_DIR$/README.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Enemy/Boss.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Enemy/Boss.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Tower/BlasterTower.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Tower/BlasterTower.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -242,7 +245,14 @@
       <option name="project" value="LOCAL" />
       <updated>1575484871510</updated>
     </task>
-    <option name="localTasksCounter" value="20" />
+    <task id="LOCAL-00020" summary="Defeated">
+      <created>1575485100191</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1575485100191</updated>
+    </task>
+    <option name="localTasksCounter" value="21" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
